@@ -1,4 +1,3 @@
-<!-- svelte-ignore a11y-invalid-attribute -->
 <script lang="ts">
 	import Time from './Time.svelte';
 	import ActionButton from './ActionButton/ActionButton.svelte';
@@ -10,32 +9,7 @@
 	import Developers from './Nav/Developers.svelte';
 	import Help from './Nav/Help.svelte';
 	import { onMount } from 'svelte';
-
-	function resetMenu(menuIcons: NodeListOf<HTMLElement>) {
-		menuIcons.forEach((icon: HTMLElement) => {
-			icon.classList.remove('links-hover');
-			const menuDrop: HTMLElement = icon.querySelector('.drop');
-			const actionDrop: HTMLElement = document.querySelector('.action-drop');
-			menuDrop.style.display = 'none';
-			actionDrop.style.display = 'none';
-		});
-	}
-	function showMenuDrop(e: any) {
-		const menuIcons: NodeListOf<HTMLElement> = document.querySelectorAll('.menu-icons');
-		resetMenu(menuIcons);
-		e.target.classList.add('links-hover');
-		e.target.querySelector('.drop').style.display = 'block';
-	}
-	function removeHoverListeners(menuIcons: NodeListOf<HTMLElement>) {
-		menuIcons.forEach((icon) => {
-			icon.removeEventListener('mouseenter', showMenuDrop);
-		});
-	}
-	function addHoverListeners(menuIcons: NodeListOf<HTMLElement>) {
-		menuIcons.forEach((icon) => {
-			icon.addEventListener('mouseenter', showMenuDrop);
-		});
-	}
+	import { resetMenu, removeHoverListeners, addHoverListeners } from '../../utils/menu';
 
 	onMount(() => {
 		const menuIcons: NodeListOf<HTMLElement> = document.querySelectorAll('.menu-icons');

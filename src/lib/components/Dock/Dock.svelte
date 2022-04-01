@@ -15,7 +15,7 @@
 	let mouseX: number | null = null;
 </script>
 
-<section class="dock-container">
+<section class="dock-container" id="dock">
 	<div
 		class="dock-el"
 		on:mousemove={(event) => (mouseX = event.x)}

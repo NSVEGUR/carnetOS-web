@@ -1,9 +1,14 @@
 <script lang="ts" context="module">
+	import Splash from '../Splash/Splash.svelte';
 	import Dock from '../Dock/Dock.svelte';
 	import Menubar from '../Menubar/Menubar.svelte';
 	import Context from '../Context/Context.svelte';
+	import {loadDesktop} from '../../utils/desktop';
+	loadDesktop();
 </script>
 
+
+<Splash/>
 <main>
 	<!-- Just for loading -->
 	<img
@@ -21,3 +26,9 @@
 	<Dock />
 	<Context />
 </main>
+
+<style lang="scss">
+	main{
+		display: none;
+	}
+</style>
