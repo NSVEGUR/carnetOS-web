@@ -5,6 +5,7 @@
   "description": "",
   "author": "nsvegur",
   "license": "UNLICENSED",
+  "repository": "https://github.com/NSVEGUR/carnetOS-web.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
