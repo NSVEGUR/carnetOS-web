@@ -2,6 +2,9 @@
   "name": "carnetos-web",
   "version": "0.0.0",
   "type": "module",
+  "description": "",
+  "author": "nsvegur",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -21,5 +24,10 @@
   },
   "dependencies": {
     "popmotion": "^11.0.3"
-  }
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "yarn@1.22.17"
 }
