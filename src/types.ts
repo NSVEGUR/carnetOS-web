@@ -1,8 +1,9 @@
 export type AppID =
-	| 'finder'
-	| 'launchpad'
-	| 'system-preferences'
-	| 'vscode'
-	| 'source'
-	| 'tableplus'
-	| 'brave';
+  | "carnetOS"
+  | "profile"
+  | "dashboard"
+  | "bookings"
+  | "trains"
+  | "developers"
+  | "settings"
+  | "source";

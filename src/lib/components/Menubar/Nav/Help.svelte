@@ -5,7 +5,10 @@
 	<div class="drop">
 		<div><a href="" class="not-active">Give Feedback</a></div>
 		<div class="drop-div" />
-		<div class="drop-link"><a href="" class="dont-ref">carnedOS Help</a></div>
+		<div class="drop-link"><a href="" class="dont-ref">carnetOS Help</a></div>
+		<div class="drop-div" />
+		<div class="drop-link"><a href="" class="dont-ref">See What's New in carnedOS</a></div>
+		<div class="drop-link"><a href="" class="dont-ref">New to Carnet?Learn the Basics</a></div>
 	</div>
 </li>
 

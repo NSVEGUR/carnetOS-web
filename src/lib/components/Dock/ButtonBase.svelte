@@ -21,6 +21,7 @@
 		margin: 0;
 		padding: 0;
 
+
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -40,7 +41,7 @@
 		}
 		span {
 			position: absolute;
-			top: -2rem;
+			top: -1.5rem;
 			color: var(--system-text-color);
 			font-weight: 500;
 			background: var(--system-transparent-color-primary);
@@ -52,6 +53,8 @@
 			border-radius: 0.3rem;
 			display: none;
 			transition: all 0.3s ease;
+
+			 white-space: nowrap;
 		}
 		&:hover span {
 			display: block;

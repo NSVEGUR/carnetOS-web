@@ -1,16 +1,18 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
 
 <li class="menu-icons menu-icon-2">
-	<a href="" class="dont-ref">Profile</a>
+	<a href="" class="dont-ref">Dashboard</a>
 	<div class="drop">
 		<div class="drop-link">
 			<a href="" class="dont-ref">Open</a>
 		</div>
 		<div class="drop-div" />
 		<div class="drop-link">
-			<a href="" class="dont-ref">My Account</a>
+			<a href="" class="dont-ref">Bookings</a>
 		</div>
-		<div class="drop-link"><a href="" class="dont-ref">Reset Password</a></div>
+		<div class="drop-link"><a href="" class="dont-ref">Trains</a></div>
+		<div class="drop-link"><a href="" class="dont-ref">Contact</a></div>
+		<div class="drop-link"><a href="" class="dont-ref">Help</a></div>
 		<div class="drop-div" />
 		<div class="drop-link"><a href="" class="dont-ref">Hide Others</a></div>
 		<div><a href="" class="not-active">Show All</a></div>

@@ -3,15 +3,23 @@
 	import type { AppID } from './../../../types';
 	import { spring } from 'svelte/motion';
 	import ButtonBase from './ButtonBase.svelte';
+	import {onMount} from 'svelte';
 
-	/** Block 1 */
 
 	export let appID: AppID;
 	export let mouseX: number | null;
 
 	let el: HTMLImageElement;
+	let screenWidth: number | null = 1200;
 
-	/** Block 2 */
+
+	onMount(()=>{
+		screenWidth = window.innerWidth;
+		window.addEventListener("resize", ()=>{
+			screenWidth = window.innerWidth;
+		})
+	})
+
 
 	const baseWidth = 57.6;
 	const distanceLimit = baseWidth * 6;
@@ -47,7 +55,6 @@
 	let width: string;
 	$: width = `${$widthPX / 13}rem`;
 
-	/** Block 3 */
 
 	let raf: number;
 
@@ -55,12 +62,8 @@
 		if (el && mouseX !== null) {
 			const rect = el.getBoundingClientRect();
 
-			// get the x coordinate of the img DOMElement's center
-			// the left x coordinate plus the half of the width
 			const imgCenterX = rect.left + rect.width / 2;
 
-			// difference between the x coordinate value of the mouse pointer
-			// and the img center x coordinate value
 			const distanceDelta = mouseX - imgCenterX;
 			distance = distanceDelta;
 			return;
@@ -73,6 +76,7 @@
 </script>
 
 <section>
+	{#if screenWidth>=700}
 	<ButtonBase class="dock-button" name={appID}>
 		<img
 			bind:this={el}
@@ -82,26 +86,21 @@
 			style="width: {width};"
 		/>
 	</ButtonBase>
+	{:else}
+	<ButtonBase class="dock-button" name={appID}>
+		<img
+			bind:this={el}
+			class="app-icon"
+			src="/icons/{appID}.png"
+			alt={appID}
+		/>
+	</ButtonBase>
+	{/if}
 </section>
 
 <style lang="scss">
-	// .dock-button {
-	// 	height: 100%;
-	// 	width: auto !important;
-
-	// 	cursor: default !important;
-
-	// 	transition: all 200ms ease-in;
-
-	// 	transform-origin: bottom;
-
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	justify-content: flex-end;
-	// }
-
 	.app-icon {
-		width: 57.6px;
+		width: 70px;
 		height: auto;
 	}
 </style>

@@ -4,9 +4,12 @@
 	<a href="" class="dont-ref">Trains</a>
 	<div class="drop">
 		<div class="drop-link">
-			<a href="" class="dont-ref">Trains Available</a>
+			<a href="" class="dont-ref">Open</a>
 		</div>
 		<div class="drop-div" />
+		<div class="drop-link">
+			<a href="" class="dont-ref">Trains Available</a>
+		</div>
 		<div class="drop-link"><a href="" class="dont-ref">Timings</a></div>
 		<div class="drop-div" />
 		<div class="drop-link"><a href="" class="dont-ref">Pricing</a></div>

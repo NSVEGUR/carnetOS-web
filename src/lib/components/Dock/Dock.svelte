@@ -3,12 +3,13 @@
 	import DockItem from './DockItem.svelte';
 
 	const apps: AppID[] = [
-		'finder',
-		'launchpad',
-		'system-preferences',
-		'tableplus',
-		'brave',
-		'vscode',
+		'profile',
+		'dashboard',
+		'bookings',
+		'trains',
+		'carnetOS',
+		'settings',
+		'developers',
 		'source'
 	];
 
@@ -57,5 +58,12 @@
 
 		display: flex;
 		align-items: flex-end;
+	}
+
+	@media screen and (max-width: 700px){
+		.dock-el{
+			max-width: 95%;
+			overflow-x: scroll;
+		}
 	}
 </style>

@@ -3,10 +3,11 @@
 	import ActionButton from './ActionButton/ActionButton.svelte';
 	import Logo from './Nav/Logo.svelte';
 	import Profile from './Nav/Profile.svelte';
+	import Dashboard from './Nav/Dashboard.svelte';
 	import Bookings from './Nav/Bookings.svelte';
 	import Trains from './Nav/Trains.svelte';
-	import Tatkal from './Nav/Tatkal.svelte';
-	import Developers from './Nav/Developers.svelte';
+	import Settings from './Nav/Settings.svelte';
+	import Contact from './Nav/Contact.svelte';
 	import Help from './Nav/Help.svelte';
 	import { onMount } from 'svelte';
 	import { resetMenu, removeHoverListeners, addHoverListeners } from '../../utils/menu';
@@ -39,10 +40,11 @@
 			<Logo />
 			<ul class="links">
 				<Profile />
+				<Dashboard />
 				<Bookings />
 				<Trains />
-				<Tatkal />
-				<Developers />
+				<Settings/>
+				<Contact />
 				<Help />
 			</ul>
 		</div>
@@ -148,6 +150,11 @@
 	@media screen and (max-width: 460px) {
 		nav .content .links {
 			padding-bottom: 0px;
+		}
+	}
+	@media screen and (max-width:320px){
+		#focus {
+			display: none !important;
 		}
 	}
 </style>

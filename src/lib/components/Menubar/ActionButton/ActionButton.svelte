@@ -26,7 +26,7 @@
 	#action-button {
 		position: relative;
 		top: 0;
-		right: 170px;
+		right: 180px;
 		padding-top: 4px;
 		height: 20px;
 		width: 20px;
@@ -73,6 +73,14 @@
 		.action-drop {
 			width: 330px;
 			left: -280px;
+		}
+	}
+	@media screen and (max-width:320px){
+		#action-button {
+			display: none;
+		}
+		.action-drop{
+			display: none;
 		}
 	}
 </style>
