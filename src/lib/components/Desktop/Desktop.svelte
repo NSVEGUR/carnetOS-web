@@ -29,6 +29,12 @@
 
 <style lang="scss">
 	main{
+		height: 100vh;
+  	width: 100vw;
 		display: none;
+		background: var(--desktop-wallpaper) center center no-repeat;
+  	background-size: cover;
+		transition: background 0.3s ease;
+		overflow: hidden;
 	}
 </style>

@@ -1,8 +1,6 @@
 <script lang="ts">
+	import switchTheme from '../../../utils/theme';
 	let focus: boolean = false;
-	function switchTheme() {
-		document.body.classList.toggle('light-theme');
-	}
 	function switchFocus() {
 		const glyph: HTMLElement = document.getElementById('focus');
 		if (!focus) {

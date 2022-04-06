@@ -12,4 +12,15 @@ export function loadDesktop() {
       dontRef();
     }, 2500);
   });
+  document.querySelector("body").addEventListener("dblclick", (e: any) => {
+    if (e.target.closest("nav") || e.target.closest(".dock-el")) return;
+    if (
+      window.innerWidth == screen.width &&
+      window.innerHeight == screen.height
+    ) {
+      document.exitFullscreen();
+    } else {
+      document.body.requestFullscreen();
+    }
+  });
 }
