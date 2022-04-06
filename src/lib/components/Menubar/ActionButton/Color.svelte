@@ -1,16 +1,5 @@
 <script lang="ts">
-	function controlSystemColor(e: any) {
-		if (e.target?.classList.contains('color')) {
-			const color = e.target;
-			const colorCircles: NodeListOf<HTMLElement> = document.querySelectorAll('.color > div');
-			const newColor = getComputedStyle(color).getPropertyValue('background');
-			document.documentElement.style.setProperty('--system-color', newColor);
-			colorCircles.forEach((circle) => {
-				circle.style.display = 'none';
-			});
-			color.querySelector('div').style.display = 'block';
-		}
-	}
+	import { controlSystemColor } from '../../../utils/Menu/color';
 </script>
 
 <div id="color" on:click={controlSystemColor}>

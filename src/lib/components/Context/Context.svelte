@@ -1,21 +1,16 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import {hideMenu, rightClick} from '../../utils/context';
-	import switchTheme from '../../utils/theme';
-	let fullScreen:boolean = true;
-	onMount(() => {
-		document.onclick = hideMenu;
-		document.oncontextmenu = rightClick;
-		window.addEventListener('resize', ()=>{
-			if(window.innerWidth == screen.width &&
-      window.innerHeight == screen.height){
-				fullScreen = false;
-			}else{
-				fullScreen = true;
-			}
-		})
-	});
+	import { hideMenu, rightClick } from '../../utils/context';
+	import switchTheme from '../../utils/Menu/theme';
+	let fullScreen: boolean = true;
+
+	function toggleFullScreen() {
+		if (window.innerWidth == screen.width && window.innerHeight == screen.height) {
+			fullScreen = false;
+		} else {
+			fullScreen = true;
+		}
+	}
 </script>
 
 <div id="contextMenu" class="contextMenu">
@@ -23,20 +18,35 @@
 	<div class="drop-div" />
 	<div class="context-link"><a href="">Get Info</a></div>
 	{#if fullScreen}
-	<div class="context-link" on:click={(e)=>{
-		e.preventDefault();
-		document.body.requestFullscreen();
-	}}><a href="">Enter Full Screen</a></div>
+		<div
+			class="context-link"
+			on:click={(e) => {
+				e.preventDefault();
+				document.body.requestFullscreen();
+			}}
+		>
+			<a href="">Enter Full Screen</a>
+		</div>
 	{:else}
-	<div class="context-link" on:click={(e)=>{
-		e.preventDefault();
-		document.exitFullscreen();
-	}}><a href="">Exit Full Screen</a></div>
+		<div
+			class="context-link"
+			on:click={(e) => {
+				e.preventDefault();
+				document.exitFullscreen();
+			}}
+		>
+			<a href="">Exit Full Screen</a>
+		</div>
 	{/if}
-	<div class="context-link" on:click={(e)=>{
-		e.preventDefault();
-		switchTheme();
-	}}><a href="">Change Theme</a></div>
+	<div
+		class="context-link"
+		on:click={(e) => {
+			e.preventDefault();
+			switchTheme();
+		}}
+	>
+		<a href="">Change Theme</a>
+	</div>
 	<div class="drop-div" />
 	<div class="stack context-link">
 		<i class="fas fa-check left-glyph" /><a href="">Use Stacks</a>
@@ -46,6 +56,7 @@
 	</div>
 	<div class="context-link"><a href="">Show View Options</a></div>
 </div>
+<svelte:window on:resize={toggleFullScreen} on:click={hideMenu} on:contextmenu={rightClick} />
 
 <style lang="scss">
 	#contextMenu {

@@ -1,136 +1,136 @@
-@import "./resets.scss";
-@import "./theme.scss";
+@import './resets.scss';
+@import './theme.scss';
 
 * {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
-  cursor: var(--system-cursor-default), default;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+	cursor: var(--system-cursor-default), default;
 }
 *:focus {
-  outline: none;
+	outline: none;
 }
 
 *:focus-visible {
-  outline: none;
+	outline: none;
 
-  box-shadow: var(--system-focus-outline);
+	box-shadow: var(--system-focus-outline);
 }
 
 html,
 body {
-  height: 100%;
-  cursor: var(--system-cursor-default), default;
+	height: 100%;
+	cursor: var(--system-cursor-default), default;
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  cursor: var(--system-cursor-default), default;
-  overflow: hidden;
-  background: black;
-  font-family: var(--primary-font);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: var(--primary-font-size);
-  -webkit-user-select: none;
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
-  user-select: none;
-  transition: background 0.3s ease;
+	height: 100vh;
+	width: 100vw;
+	cursor: var(--system-cursor-default), default;
+	overflow: hidden;
+	background: black;
+	font-family: var(--primary-font);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: var(--primary-font-size);
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+	transition: background 0.3s ease;
 }
 h1,
 h2 {
-  font-family: var(--primary-font);
-  font-size: var(--secondary-font-size);
+	font-family: var(--primary-font);
+	font-size: var(--secondary-font-size);
 }
 input {
-  font-family: var(--primary-font);
+	font-family: var(--primary-font);
 }
 
 p {
-  font-size: var(--primary-font-size);
+	font-size: var(--primary-font-size);
 }
 
 .drop {
-  backdrop-filter: blur(20px);
-  color: var(--system-text-color);
-  font-size: 13px;
-  position: absolute;
-  top: 41px;
-  left: 0px;
-  padding: 10px 5px;
-  background: var(--system-transparent-color-primary);
-  border-radius: 8px;
-  box-shadow: var(--shadow-effect);
-  display: none;
-  flex-direction: column;
-  box-sizing: border-box;
-  min-width: 200px;
-  width: max-content;
-  .drop-div {
-    margin: 3px 0;
-    background: var(--system-transparent-color-secondary-op);
-    height: 0.5px;
-    width: 100%;
-  }
-  .drop-link {
-    border-radius: 6px;
+	backdrop-filter: blur(20px);
+	color: var(--system-text-color);
+	font-size: 13px;
+	position: absolute;
+	top: 41px;
+	left: 0px;
+	padding: 10px 5px;
+	background: var(--system-transparent-color-primary);
+	border-radius: 8px;
+	box-shadow: var(--shadow-effect);
+	display: none;
+	flex-direction: column;
+	box-sizing: border-box;
+	min-width: 200px;
+	width: max-content;
+	.drop-div {
+		margin: 3px 0;
+		background: var(--system-transparent-color-secondary-op);
+		height: 0.5px;
+		width: 100%;
+	}
+	.drop-link {
+		border-radius: 6px;
 
-    &:hover {
-      background: var(--system-color);
-    }
-  }
+		&:hover {
+			background: var(--system-color);
+		}
+	}
 }
 
 .links-hover {
-  background: var(--system-transparent-color-primary-op);
+	background: var(--system-transparent-color-primary-op);
 }
 
 // Keyframe ANIMATIONS
 @keyframes loading {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
 }
 
 @keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes appearFromBottom {
-  0% {
-    transform: translateY(20vh);
-  }
-  100% {
-    transform: translateY(0);
-  }
+	0% {
+		transform: translateY(20vh);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 @keyframes appearFromTop {
-  0% {
-    transform: translateY(-20vh);
-  }
-  100% {
-    transform: translateY(0);
-  }
+	0% {
+		transform: translateY(-20vh);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 @keyframes shake {
-  0% {
-    transform: translateX(10px);
-  }
-  50% {
-    transform: translateX(-10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+	0% {
+		transform: translateX(10px);
+	}
+	50% {
+		transform: translateX(-10px);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }

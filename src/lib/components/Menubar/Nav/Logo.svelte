@@ -32,6 +32,9 @@
 		padding: 0 10px;
 		margin-left: 0.7rem;
 		border-radius: 3px;
+		.fa-apple {
+			font-size: 1.1rem;
+		}
 		a {
 			color: var(--system-text-color);
 		}

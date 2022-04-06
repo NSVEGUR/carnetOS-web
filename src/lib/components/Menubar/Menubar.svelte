@@ -9,33 +9,32 @@
 	import Settings from './Nav/Settings.svelte';
 	import Contact from './Nav/Contact.svelte';
 	import Help from './Nav/Help.svelte';
-	import { onMount } from 'svelte';
-	import { resetMenu, removeHoverListeners, addHoverListeners } from '../../utils/menu';
-
-	onMount(() => {
+	import { resetMenu, removeHoverListeners, addHoverListeners } from '../../utils/Menu/menu';
+	function reset(e: any) {
 		const menuIcons: NodeListOf<HTMLElement> = document.querySelectorAll('.menu-icons');
-		window.addEventListener('mouseup', (e: any) => {
-			menuIcons.forEach((icon) => {
-				if (e.target != icon && e.target.parentNode != icon) {
-					resetMenu(menuIcons);
-					removeHoverListeners(menuIcons);
-				}
-			});
-		});
-		document.querySelector('nav').addEventListener('click', (e: any) => {
-			if (e.target.closest('.menu-icons')) {
-				const el = e.target.closest('.menu-icons');
+		menuIcons.forEach((icon) => {
+			if (e.target != icon && e.target.parentNode != icon) {
 				resetMenu(menuIcons);
-				el.classList.add('links-hover');
-				el.querySelector('.drop').style.display = 'block';
-				addHoverListeners(menuIcons);
+				removeHoverListeners(menuIcons);
 			}
 		});
-	});
+	}
+	function start(e: any) {
+		const menuIcons: NodeListOf<HTMLElement> = document.querySelectorAll('.menu-icons');
+		if (e.target.closest('.menu-icons')) {
+			const el = e.target.closest('.menu-icons');
+			resetMenu(menuIcons);
+			el.classList.add('links-hover');
+			el.querySelector('.drop').style.display = 'block';
+			addHoverListeners(menuIcons);
+		}
+	}
 </script>
 
+<svelte:window on:mouseup={reset} />
+
 <div id="menu">
-	<nav>
+	<nav on:click={start}>
 		<div class="content">
 			<Logo />
 			<ul class="links">
@@ -43,7 +42,7 @@
 				<Dashboard />
 				<Bookings />
 				<Trains />
-				<Settings/>
+				<Settings />
 				<Contact />
 				<Help />
 			</ul>
@@ -152,7 +151,7 @@
 			padding-bottom: 0px;
 		}
 	}
-	@media screen and (max-width:320px){
+	@media screen and (max-width: 320px) {
 		#focus {
 			display: none !important;
 		}

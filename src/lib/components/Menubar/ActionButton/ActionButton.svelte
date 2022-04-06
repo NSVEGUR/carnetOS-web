@@ -75,11 +75,11 @@
 			left: -280px;
 		}
 	}
-	@media screen and (max-width:320px){
+	@media screen and (max-width: 320px) {
 		#action-button {
 			display: none;
 		}
-		.action-drop{
+		.action-drop {
 			display: none;
 		}
 	}

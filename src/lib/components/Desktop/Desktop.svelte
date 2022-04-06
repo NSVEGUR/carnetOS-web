@@ -1,39 +1,28 @@
 <script lang="ts" context="module">
 	import Splash from '../Splash/Splash.svelte';
+	import Duplicates from '../Duplicates/Duplicates.svelte';
 	import Dock from '../Dock/Dock.svelte';
 	import Menubar from '../Menubar/Menubar.svelte';
 	import Context from '../Context/Context.svelte';
-	import {loadDesktop} from '../../utils/desktop';
-	loadDesktop();
+	import { loadDesktop, manageFullScreen } from '../../utils/desktop';
 </script>
 
-
-<Splash/>
+<svelte:window on:load={loadDesktop} on:dblclick={manageFullScreen} />
+<Splash />
 <main>
-	<!-- Just for loading -->
-	<img
-		src="/dark-mac-bg.jpeg"
-		alt="wall"
-		style="width: 1px; height: 1px; position: fixed; top: 0; right: 0"
-	/>
-	<img
-		src="/light-mac-bg.jpeg"
-		alt="wall"
-		style="width: 1px; height: 1px; position: fixed; bottom: 0; left: 0"
-	/>
-	<!-- Just for loading -->
+	<Duplicates />
 	<Menubar />
 	<Dock />
 	<Context />
 </main>
 
 <style lang="scss">
-	main{
+	main {
 		height: 100vh;
-  	width: 100vw;
+		width: 100vw;
 		display: none;
 		background: var(--desktop-wallpaper) center center no-repeat;
-  	background-size: cover;
+		background-size: cover;
 		transition: background 0.3s ease;
 		overflow: hidden;
 	}

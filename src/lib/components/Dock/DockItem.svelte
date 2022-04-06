@@ -3,8 +3,7 @@
 	import type { AppID } from './../../../types';
 	import { spring } from 'svelte/motion';
 	import ButtonBase from './ButtonBase.svelte';
-	import {onMount} from 'svelte';
-
+	import { onMount } from 'svelte';
 
 	export let appID: AppID;
 	export let mouseX: number | null;
@@ -12,14 +11,9 @@
 	let el: HTMLImageElement;
 	let screenWidth: number | null = 1200;
 
-
-	onMount(()=>{
+	onMount(() => {
 		screenWidth = window.innerWidth;
-		window.addEventListener("resize", ()=>{
-			screenWidth = window.innerWidth;
-		})
-	})
-
+	});
 
 	const baseWidth = 57.6;
 	const distanceLimit = baseWidth * 6;
@@ -55,7 +49,6 @@
 	let width: string;
 	$: width = `${$widthPX / 13}rem`;
 
-
 	let raf: number;
 
 	function animate(mouseX: number) {
@@ -75,26 +68,27 @@
 	$: raf = requestAnimationFrame(() => animate(mouseX));
 </script>
 
+<svelte:window
+	on:resize={() => {
+		screenWidth = window.innerWidth;
+	}}
+/>
+
 <section>
-	{#if screenWidth>=700}
-	<ButtonBase class="dock-button" name={appID}>
-		<img
-			bind:this={el}
-			class="app-icon"
-			src="/icons/{appID}.png"
-			alt={appID}
-			style="width: {width};"
-		/>
-	</ButtonBase>
+	{#if screenWidth >= 700}
+		<ButtonBase class="dock-button" name={appID}>
+			<img
+				bind:this={el}
+				class="app-icon"
+				src="/icons/{appID}.png"
+				alt={appID}
+				style="width: {width};"
+			/>
+		</ButtonBase>
 	{:else}
-	<ButtonBase class="dock-button" name={appID}>
-		<img
-			bind:this={el}
-			class="app-icon"
-			src="/icons/{appID}.png"
-			alt={appID}
-		/>
-	</ButtonBase>
+		<ButtonBase class="dock-button" name={appID}>
+			<img bind:this={el} class="app-icon" src="/icons/{appID}.png" alt={appID} />
+		</ButtonBase>
 	{/if}
 </section>
 

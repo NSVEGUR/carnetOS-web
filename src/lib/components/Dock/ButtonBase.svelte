@@ -21,7 +21,6 @@
 		margin: 0;
 		padding: 0;
 
-
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -54,7 +53,7 @@
 			display: none;
 			transition: all 0.3s ease;
 
-			 white-space: nowrap;
+			white-space: nowrap;
 		}
 		&:hover span {
 			display: block;

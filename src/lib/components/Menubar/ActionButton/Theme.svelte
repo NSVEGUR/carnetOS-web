@@ -1,5 +1,6 @@
 <script lang="ts">
-	import switchTheme from '../../../utils/theme';
+	import switchTheme from '../../../utils/Menu/theme';
+
 	let focus: boolean = false;
 	function switchFocus() {
 		const glyph: HTMLElement = document.getElementById('focus');

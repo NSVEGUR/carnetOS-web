@@ -7,7 +7,6 @@
 		'dashboard',
 		'bookings',
 		'trains',
-		'carnetOS',
 		'settings',
 		'developers',
 		'source'
@@ -60,8 +59,8 @@
 		align-items: flex-end;
 	}
 
-	@media screen and (max-width: 700px){
-		.dock-el{
+	@media screen and (max-width: 700px) {
+		.dock-el {
 			max-width: 95%;
 			overflow-x: scroll;
 		}

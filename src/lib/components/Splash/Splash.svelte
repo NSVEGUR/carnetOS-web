@@ -1,13 +1,13 @@
 <section id="splash">
-    <div class="splash-logo">
-      <i class="fab fa-apple"></i>
-    </div>
-    <div class="loading-container">
-      <div class="loading-bar">
-        <div class="loading-indicator"></div>
-      </div>
-    </div>
-		    <audio id="audio" autoplay={true} src="/startup-sound.mp3"></audio>
+	<div class="splash-logo">
+		<i class="fab fa-apple" />
+	</div>
+	<div class="loading-container">
+		<div class="loading-bar">
+			<div class="loading-indicator" />
+		</div>
+	</div>
+	<audio id="audio" autoplay={true} src="/startup-sound.mp3" />
 </section>
 
 <style lang="scss">
@@ -50,7 +50,7 @@
 			display: none;
 		}
 		@media screen and (max-width: 460px) {
-				font-size: 2.5rem;
+			font-size: 2.5rem;
 		}
 	}
 </style>
