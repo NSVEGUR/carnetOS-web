@@ -1,6 +1,7 @@
 function hideMenu() {
 	document.getElementById('contextMenu').style.display = 'none';
 }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function rightClick(e: any) {
 	e.preventDefault();
 	const contextMenu = document.getElementById('contextMenu');

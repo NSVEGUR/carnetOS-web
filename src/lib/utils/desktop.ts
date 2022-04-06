@@ -10,6 +10,7 @@ export function loadDesktop() {
 	}, 2500);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function manageFullScreen(e: any) {
 	if (e.target.closest('nav') || e.target.closest('.dock-el')) return;
 	if (window.innerWidth == screen.width && window.innerHeight == screen.height) {

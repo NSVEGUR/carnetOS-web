@@ -22,7 +22,7 @@
 		}
 		playing = !playing;
 	}
-	function controlVolume(e: any) {
+	function controlVolume(e) {
 		perfect.volume = e.target.value / 100;
 	}
 </script>

@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function controlSystemColor(e: any) {
 	if (e.target?.classList.contains('color')) {
 		const color = e.target;

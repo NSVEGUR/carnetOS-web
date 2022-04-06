@@ -7,6 +7,7 @@ function resetMenu(menuIcons: NodeListOf<HTMLElement>) {
 		actionDrop.style.display = 'none';
 	});
 }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function showMenuDrop(e: any) {
 	const menuIcons: NodeListOf<HTMLElement> = document.querySelectorAll('.menu-icons');
 	resetMenu(menuIcons);
