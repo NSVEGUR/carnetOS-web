@@ -1,7 +1,7 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
 
 <div class="logo menu-icons menu-icon-1" id="logo">
-	<a href="" class="logo-link dont-ref"> <i class="fab fa-apple" /></a>
+	<a href="" class="logo-link dont-ref"> <i class="fas fa-subway" /></a>
 	<div class="drop">
 		<div class="drop-link" data-open="about" data-db="0">
 			<a href="" class="dont-ref">About carnetOS</a>
@@ -32,9 +32,6 @@
 		padding: 0 10px;
 		margin-left: 0.7rem;
 		border-radius: 3px;
-		.fa-apple {
-			font-size: 1.1rem;
-		}
 		a {
 			color: var(--system-text-color);
 		}

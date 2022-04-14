@@ -1,6 +1,6 @@
 <section id="splash">
 	<div class="splash-logo">
-		<i class="fab fa-apple" />
+		<i class="fas fa-subway" />
 	</div>
 	<div class="loading-container">
 		<div class="loading-bar">

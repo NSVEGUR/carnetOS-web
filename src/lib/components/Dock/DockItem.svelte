@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { interpolate } from 'popmotion';
 	import type { AppID } from './../../../types';
-	import { spring } from 'svelte/motion';
+	import { spring, tweened } from 'svelte/motion';
+	import { sineInOut } from 'svelte/easing';
 	import ButtonBase from './ButtonBase.svelte';
 	import { onMount } from 'svelte';
 
@@ -66,6 +67,16 @@
 	}
 
 	$: raf = requestAnimationFrame(() => animate(mouseX));
+
+	const appOpenIconBounceTransform = tweened(0, {
+		duration: 400,
+		easing: sineInOut
+	});
+
+	async function openApp(e: MouseEvent) {
+		await appOpenIconBounceTransform.set(-39.2);
+		appOpenIconBounceTransform.set(0);
+	}
 </script>
 
 <svelte:window
@@ -75,21 +86,23 @@
 />
 
 <section>
-	{#if screenWidth >= 700}
-		<ButtonBase class="dock-button" name={appID}>
-			<img
-				bind:this={el}
-				class="app-icon"
-				src="/icons/{appID}.png"
-				alt={appID}
-				style="width: {width};"
-			/>
-		</ButtonBase>
-	{:else}
-		<ButtonBase class="dock-button" name={appID}>
-			<img bind:this={el} class="app-icon" src="/icons/{appID}.png" alt={appID} />
-		</ButtonBase>
-	{/if}
+	<div on:click={openApp} style="transform: translate3d(0, {$appOpenIconBounceTransform}%, 0)">
+		{#if screenWidth >= 700}
+			<ButtonBase class="dock-button" {appID}>
+				<img
+					bind:this={el}
+					class="app-icon"
+					src="/icons/{appID}.png"
+					alt={appID}
+					style="width: {width};"
+				/>
+			</ButtonBase>
+		{:else}
+			<ButtonBase class="dock-button" {appID}>
+				<img bind:this={el} class="app-icon" src="/icons/{appID}.png" alt={appID} />
+			</ButtonBase>
+		{/if}
+	</div>
 </section>
 
 <style lang="scss">

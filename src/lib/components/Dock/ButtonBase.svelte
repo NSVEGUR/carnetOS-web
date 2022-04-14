@@ -1,10 +1,18 @@
 <script lang="ts">
-	export let name;
+	import type { AppID } from 'src/types';
+	import { App } from '../../utils/Apps/app';
+	export let appID: AppID;
+	const app = new App('hey');
 </script>
 
-<button {...$$props}>
+<button
+	{...$$props}
+	on:click={() => {
+		app.open(appID);
+	}}
+>
 	<slot />
-	<span>{name}</span>
+	<span>{appID}</span>
 </button>
 
 <style lang="scss">
