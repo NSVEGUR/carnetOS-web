@@ -1,8 +1,15 @@
 <script lang="ts">
 	import type { AppID } from 'src/types';
-	import { App } from '../../utils/Apps/app';
+	import { App } from '../../utils/app';
+	import { onMount } from 'svelte';
 	export let appID: AppID;
-	const app = new App('hey');
+	let app;
+	const appNode: string = 'app-' + appID.toString();
+	onMount(() => {
+		app = new App('hey', {
+			mount: document.getElementById(appNode)
+		});
+	});
 </script>
 
 <button
