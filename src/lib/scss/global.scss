@@ -40,7 +40,7 @@ body {
 	-moz-user-select: -moz-none;
 	-ms-user-select: none;
 	user-select: none;
-	transition: background 0.3s ease;
+	transition: background 0.3s ease-in-out;
 }
 h1,
 h2 {
