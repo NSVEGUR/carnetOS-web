@@ -31,6 +31,9 @@
 			}),
 			Developers: new App('Developers', {
 				mount: document.getElementById('app-developers')
+			}),
+			Help: new App('Help', {
+				mount: document.getElementById('app-help')
 			})
 		};
 	});

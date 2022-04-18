@@ -1,5 +1,5 @@
 export type AppID =
-	| 'carnetOS'
+	| 'help'
 	| 'profile'
 	| 'dashboard'
 	| 'bookings'

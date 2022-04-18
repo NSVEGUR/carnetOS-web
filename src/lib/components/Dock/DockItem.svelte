@@ -31,9 +31,9 @@
 	const widthOutput = [
 		baseWidth,
 		baseWidth * 1.1,
-		baseWidth * 1.318,
-		baseWidth * 2.318,
-		baseWidth * 1.318,
+		baseWidth * 1.518,
+		baseWidth * 2.518,
+		baseWidth * 1.518,
 		baseWidth * 1.1,
 		baseWidth
 	];

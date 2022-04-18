@@ -9,6 +9,7 @@
 		'trains',
 		'settings',
 		'developers',
+		'help',
 		'source'
 	];
 
