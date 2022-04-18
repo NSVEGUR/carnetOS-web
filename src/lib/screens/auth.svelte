@@ -203,6 +203,9 @@
 		}
 		.profile img {
 			height: 130px;
+			width: 130px;
+			object-fit: cover;
+			border-radius: 50%;
 		}
 		.cancel {
 			position: fixed;

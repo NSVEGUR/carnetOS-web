@@ -1,13 +1,13 @@
 <section id="splash">
 	<div class="splash-logo">
-		<i class="fas fa-subway" />
+		<i class="fab fa-apple" />
 	</div>
 	<div class="loading-container">
 		<div class="loading-bar">
 			<div class="loading-indicator" />
 		</div>
 	</div>
-	<audio id="audio" autoplay={true} src="/startup-sound.mp3" />
+	<audio id="audio" autoplay={true} src="music/startup-sound.mp3" />
 </section>
 
 <style lang="scss">

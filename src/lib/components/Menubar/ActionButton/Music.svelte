@@ -3,7 +3,7 @@
 	let playing: boolean = false;
 	let perfect: HTMLAudioElement;
 	onMount(() => {
-		perfect = new Audio('/music/radheshyam.mp3');
+		perfect = new Audio('/music/perfect.mp3');
 	});
 	function controlSong() {
 		const perfectDiv: HTMLElement = document.querySelector('.perfect');
@@ -38,8 +38,8 @@
 <div id="wallpaper">
 	<div class="wallpaper" />
 	<div>
-		<h3>RadheShyam</h3>
-		<h4>Soul of Radheshyam</h4>
+		<h3>Perfect</h3>
+		<h4>Divide &div; Ed Sheeran</h4>
 	</div>
 	<div class="perfect" on:click={controlSong}>
 		<div class="perfect-play">
@@ -123,7 +123,7 @@
 		.wallpaper {
 			width: 70px;
 			height: 70px;
-			background: url('/music/radheshyam.webp') no-repeat center center;
+			background: url('/music/perfect.jpeg') no-repeat center center;
 			transition: background 0.3s ease;
 			background-size: cover;
 			border-radius: 10px;

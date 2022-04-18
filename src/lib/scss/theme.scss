@@ -15,12 +15,13 @@
 	--system-color: #3273ecf3;
 
 	/* For System dark-theme */
-	--desktop-wallpaper: url('/wallpapers/train-d.jpeg');
+	--desktop-wallpaper: url('/wallpapers/dark.jpeg');
 	--system-primary-color: #1a1a1d;
 	--system-text-color: white;
 	--system-text-color-op: black;
 	--system-transparent-color-primary: rgba(0, 0, 0, 0.2);
 	--system-transparent-color-secondary: rgba(0, 0, 0, 0.3);
+	--system-transparent-color-nav: rgba(0, 0, 0, 0.2);
 	--system-transparent-color-window: rgba(0, 0, 0, 0.4);
 	--system-color-window: #1b1b1d;
 	--system-transparent-color-primary-op: rgba(255, 255, 255, 0.3);
@@ -34,12 +35,13 @@
 
 /* For System light-theme */
 .light-theme {
-	--desktop-wallpaper: url('/wallpapers/train-l.jpeg');
+	--desktop-wallpaper: url('/wallpapers/light.jpeg');
 	--system-primary-color: #fffefe;
 	--system-text-color: black;
 	--system-text-color-op: white;
 	--system-transparent-color-primary: rgba(255, 255, 255, 0.5);
 	--system-transparent-color-secondary: rgba(255, 255, 255, 0.3);
+	--system-transparent-color-nav: rgba(255, 255, 255, 0.2);
 	--system-transparent-color-window: rgba(255, 255, 255, 0.4);
 	--system-color-window: #fefeff;
 	--system-transparent-color-primary-op: rgba(0, 0, 0, 0.3);

@@ -1,4 +1,5 @@
 import 'winbox';
+import { ActiveIcon } from '../../store/store';
 
 declare const WinBox: WinBox.WinBoxConstructor;
 
@@ -21,7 +22,11 @@ export class App {
 			bottom: 100,
 			onclose: () => {
 				this.opened = false;
+				ActiveIcon.set('');
 				return false;
+			},
+			onfocus: () => {
+				ActiveIcon.set(title);
 			},
 			...params
 		};

@@ -174,6 +174,10 @@
 </div>
 
 <style lang="scss">
+	#app-developers {
+		width: 100%;
+		height: 100%;
+	}
 	.app-developers {
 		width: 100%;
 		height: 100%;
@@ -191,8 +195,9 @@
 			top: 0;
 			width: 20%;
 			height: 100%;
+			padding-top: 30px;
 			.dev {
-				border-radius: 4px;
+				border-radius: 8px;
 				padding-left: 10px;
 				&:hover {
 					background: var(--system-transparent-color-primary-op);
@@ -205,6 +210,10 @@
 		.dev-about {
 			width: 70%;
 			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			img {
 				height: 120px;
 				width: 120px;

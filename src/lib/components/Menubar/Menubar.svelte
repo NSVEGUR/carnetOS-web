@@ -58,7 +58,7 @@
 
 <style>
 	#menu {
-		background: var(--system-transparent-color-primary);
+		background: var(--system-transparent-color-nav);
 		position: fixed;
 		z-index: 9900;
 		width: 100vw;
@@ -82,7 +82,7 @@
 		top: 0;
 
 		z-index: 0;
-		backdrop-filter: blur(12px);
+		backdrop-filter: blur(15px);
 	}
 
 	nav .content {
