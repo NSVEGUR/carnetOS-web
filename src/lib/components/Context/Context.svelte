@@ -1,7 +1,7 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
 <script lang="ts">
 	import { hideMenu, rightClick } from '../../utils/context';
-	import switchTheme from '../../utils/Menu/theme';
+	import switchTheme from '../../utils/menu/theme';
 	let fullScreen: boolean = true;
 
 	function toggleFullScreen() {

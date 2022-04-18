@@ -5,7 +5,7 @@
 	import Menubar from '../Menubar/Menubar.svelte';
 	import Context from '../Context/Context.svelte';
 	import { loadDesktop, manageFullScreen } from '../../utils/desktop';
-	import Apps from '../../App/apps.svelte';
+	import Apps from '../../apps/apps.svelte';
 </script>
 
 <svelte:window on:load={loadDesktop} on:dblclick={manageFullScreen} />

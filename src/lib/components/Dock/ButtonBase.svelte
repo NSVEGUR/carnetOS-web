@@ -1,26 +1,30 @@
 <script lang="ts">
 	import type { AppID } from 'src/types';
-	import { App } from '../../utils/app';
-	import { onMount } from 'svelte';
+	import { Apps } from '../../utils/app/apps';
 	export let appID: AppID;
-	let app;
-	const appNode: string = 'app-' + appID.toString();
-	onMount(() => {
-		app = new App('hey', {
-			mount: document.getElementById(appNode)
-		});
-	});
+	function openApp(e: any) {
+		const appID = e.target.closest('button').dataset.appid;
+		$Apps[appID].open();
+	}
 </script>
 
-<button
-	{...$$props}
-	on:click={() => {
-		app.open(appID);
-	}}
->
-	<slot />
-	<span>{appID}</span>
-</button>
+{#if appID != 'source'}
+	<button
+		{...$$props}
+		on:click={openApp}
+		data-appid={appID.toString().toUpperCase()[0] + appID.toString().substring(1)}
+	>
+		<slot />
+		<span>{appID}</span>
+	</button>
+{:else}
+	<a href="https://github.com/NSVEGUR/carnetOS-web" target="_blank">
+		<button {...$$props}>
+			<slot />
+			<span>{appID}</span>
+		</button>
+	</a>
+{/if}
 
 <style lang="scss">
 	button {
@@ -58,9 +62,7 @@
 			top: -1.5rem;
 			color: var(--system-text-color);
 			font-weight: 500;
-			background: var(--system-transparent-color-primary);
-			backdrop-filter: blur(5px);
-			box-shadow: var(--shadow-effect);
+			background: var(--system-primary-color);
 
 			padding: 0.2rem 0.5rem;
 

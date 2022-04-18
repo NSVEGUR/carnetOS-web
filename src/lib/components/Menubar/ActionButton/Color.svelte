@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { controlSystemColor } from '../../../utils/Menu/color';
+	import { controlSystemColor } from '../../../utils/menu/color';
 </script>
 
 <div id="color" on:click={controlSystemColor}>

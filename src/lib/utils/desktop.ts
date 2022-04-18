@@ -1,4 +1,4 @@
-import { dontRef } from './Menu/dont-ref';
+import { dontRef } from './menu/dont-ref';
 
 export function loadDesktop() {
 	setTimeout(() => {

@@ -1,0 +1,40 @@
+<script lang="ts">
+	import Profile from './profile.svelte';
+	import Dashboard from './dashboard.svelte';
+	import Bookings from './bookings.svelte';
+	import Trains from './trains.svelte';
+	import Settings from './settings.svelte';
+	import Developers from './developers.svelte';
+	import { onMount } from 'svelte';
+	import { App } from '../utils/app';
+	import { Apps } from '../utils/app/apps';
+	onMount(() => {
+		$Apps = {
+			Profile: new App('Profile', {
+				mount: document.getElementById('app-profile')
+			}),
+			Dashboard: new App('Dashboard', {
+				mount: document.getElementById('app-dashboard')
+			}),
+			Bookings: new App('Bookings', {
+				mount: document.getElementById('app-bookings')
+			}),
+			Trains: new App('Trains', {
+				mount: document.getElementById('app-trains')
+			}),
+			Settings: new App('Settings', {
+				mount: document.getElementById('app-settings')
+			}),
+			Developers: new App('Developers', {
+				mount: document.getElementById('app-developers')
+			})
+		};
+	});
+</script>
+
+<Profile />
+<Dashboard />
+<Bookings />
+<Trains />
+<Settings />
+<Developers />
