@@ -9,7 +9,7 @@
 	import Settings from './Nav/Settings.svelte';
 	import Contact from './Nav/Contact.svelte';
 	import Help from './Nav/Help.svelte';
-	import { resetMenu, removeHoverListeners, addHoverListeners } from '../../utils/Menu/menu';
+	import { resetMenu, removeHoverListeners, addHoverListeners } from '../../utils/menu/menu';
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	function reset(e: any) {
 		const menuIcons: NodeListOf<HTMLElement> = document.querySelectorAll('.menu-icons');
