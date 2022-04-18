@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { AppID } from 'src/types';
-	import { ActiveIcon } from '../../store/store';
-	import { Apps } from '../../utils/app/apps';
+	import { ActiveIcon } from './../../store/store';
+	import { Apps } from './../../utils/app/apps';
 	export let appID: AppID;
 	function openApp(e: any) {
 		const appID = e.target.closest('button').dataset.appid;

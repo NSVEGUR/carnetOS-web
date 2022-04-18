@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Splash from '../components/Splash/Splash.svelte';
-	import { loadDesktop, manageFullScreen } from '../utils/desktop';
+	import Splash from './../components/Splash/Splash.svelte';
+	import { loadDesktop, manageFullScreen } from './../utils/desktop';
 	import { Motion } from 'svelte-motion';
 	let auth = 'none';
 	const pageTransitionVariants = {

@@ -1,5 +1,5 @@
 import 'winbox';
-import { ActiveIcon } from '../../store/store';
+import { ActiveIcon } from './../../store/store';
 
 declare const WinBox: WinBox.WinBoxConstructor;
 

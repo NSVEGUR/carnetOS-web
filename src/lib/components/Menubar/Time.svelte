@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { refreshTime } from '../../utils/menu/time';
+	import { refreshTime } from './../../utils/menu/time';
 	onMount(() => {
 		refreshTime();
 		setInterval(refreshTime, 1000);

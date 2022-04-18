@@ -6,8 +6,8 @@
 	import Settings from './settings.svelte';
 	import Developers from './developers.svelte';
 	import { onMount } from 'svelte';
-	import { App } from '../utils/app';
-	import { Apps } from '../utils/app/apps';
+	import { App } from './../utils/app';
+	import { Apps } from './../utils/app/apps';
 	onMount(() => {
 		$Apps = {
 			Profile: new App('Profile', {
