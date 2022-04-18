@@ -11,7 +11,9 @@
 	onMount(() => {
 		$Apps = {
 			Profile: new App('Profile', {
-				mount: document.getElementById('app-profile')
+				mount: document.getElementById('app-profile'),
+				x: '0%',
+				y: '5%'
 			}),
 			Dashboard: new App('Dashboard', {
 				mount: document.getElementById('app-dashboard')
@@ -23,7 +25,9 @@
 				mount: document.getElementById('app-trains')
 			}),
 			Settings: new App('Settings', {
-				mount: document.getElementById('app-settings')
+				mount: document.getElementById('app-settings'),
+				x: '45%',
+				y: '5%'
 			}),
 			Developers: new App('Developers', {
 				mount: document.getElementById('app-developers')

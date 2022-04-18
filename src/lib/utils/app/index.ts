@@ -18,6 +18,8 @@ export class App {
 			y: 'center',
 			width: '50%',
 			height: '70%',
+			minheight: '70%',
+			minwidth: '50%',
 			top: 40,
 			bottom: 100,
 			onclose: () => {
