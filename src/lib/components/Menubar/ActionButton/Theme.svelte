@@ -1,5 +1,5 @@
 <script lang="ts">
-	import switchTheme from './../../../utils/menu/theme';
+	import switchTheme from '../../../utils/menubar/theme';
 
 	let focus: boolean = false;
 	function switchFocus() {
