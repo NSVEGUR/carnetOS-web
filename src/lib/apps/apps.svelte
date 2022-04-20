@@ -16,7 +16,9 @@
 				y: '5%'
 			}),
 			Dashboard: new App('Dashboard', {
-				mount: document.getElementById('app-dashboard')
+				mount: document.getElementById('app-dashboard'),
+				height: '80%',
+				width: '70%'
 			}),
 			Bookings: new App('Bookings', {
 				mount: document.getElementById('app-bookings')

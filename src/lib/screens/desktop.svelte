@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import Splash from './../components/Splash/Splash.svelte';
+	import Splash from './splash.svelte';
 	import Duplicates from './../components/Duplicates/Duplicates.svelte';
 	import Dock from './../components/Dock/Dock.svelte';
 	import Menubar from './../components/Menubar/Menubar.svelte';

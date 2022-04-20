@@ -11,6 +11,7 @@
 			<a href="" class="dont-ref">Bookings</a>
 		</div>
 		<div class="drop-link"><a href="" class="dont-ref">Trains</a></div>
+		<div class="drop-link"><a href="" class="dont-ref">Settings</a></div>
 		<div class="drop-link"><a href="" class="dont-ref">Contact</a></div>
 		<div class="drop-link"><a href="" class="dont-ref">Help</a></div>
 		<div class="drop-div" />

@@ -8,8 +8,8 @@
 		'bookings',
 		'trains',
 		'settings',
-		'developers',
 		'help',
+		'developers',
 		'source'
 	];
 
