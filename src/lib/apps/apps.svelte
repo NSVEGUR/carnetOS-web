@@ -21,7 +21,11 @@
 				width: '70%'
 			}),
 			Bookings: new App('Bookings', {
-				mount: document.getElementById('app-bookings')
+				mount: document.getElementById('app-bookings'),
+				height: '80%',
+				width: '80%',
+				x: '15%',
+				y: '10%'
 			}),
 			Trains: new App('Trains', {
 				mount: document.getElementById('app-trains')
