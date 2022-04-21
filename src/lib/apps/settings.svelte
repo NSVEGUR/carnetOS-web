@@ -1,6 +1,7 @@
 <!--  svelte-ignore a11y-invalid-attribute-->
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { Apps } from './../utils/app/apps';
 	import Theme from './../components/Menubar/ActionButton/Theme.svelte';
 	import Color from './../components/Menubar/ActionButton/Color.svelte';
 	let fullscreen = false;
@@ -46,10 +47,20 @@
 				<div data-settingslink="0" class="settings-links active-settings" on:click={trigger}>
 					<span><i class="fas fa-desktop" /></span>System Settings
 				</div>
-				<div data-settingslink="1" class="settings-links" on:click={trigger}>
+				<div
+					class="settings-links"
+					on:click={() => {
+						$Apps['Bookings'].open();
+					}}
+				>
 					<span><i class="fas fa-ticket-alt" /></span>Booking Settings
 				</div>
-				<div data-settingslink="2" class="settings-links" on:click={trigger}>
+				<div
+					class="settings-links"
+					on:click={() => {
+						$Apps['Profile'].open();
+					}}
+				>
 					<span><i class="fas fa-user" /></span>Profile Settings
 				</div>
 			</div>

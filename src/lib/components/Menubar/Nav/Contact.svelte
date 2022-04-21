@@ -1,17 +1,37 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
+<script lang="ts">
+	import { Apps } from './../../../utils/app/apps';
+</script>
 
 <li class="menu-icons menu-icon-2">
 	<a href="" class="dont-ref">Contact</a>
 	<div class="drop">
-		<div class="drop-link">
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Developers'].open();
+			}}
+		>
 			<a href="" class="dont-ref">About Developers</a>
 		</div>
 		<div class="drop-div" />
-		<div class="drop-link"><a href="" class="dont-ref">Harsha Vasireddy</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Ravindar Guguloth</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Praveen Mukthi</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Vineeth Chabala</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Nagasai Vegur</a></div>
+		<div class="drop-link">
+			<a href="https://harsha662002.github.io/Personal_Portfolio/" target="_blank"
+				>Harsha Vasireddy</a
+			>
+		</div>
+		<div class="drop-link">
+			<a href="https://ravindar832.github.io/Blog/" target="_blank">Ravindar Guguloth</a>
+		</div>
+		<div class="drop-link">
+			<a href="https://praveen-prav.github.io/Praveen/" target="_blank">Praveen Mukthi</a>
+		</div>
+		<div class="drop-link">
+			<a href="https://vineethchabala.github.io/VineethChabalaPortfolio/" target="_blank"
+				>Vineeth Chabala</a
+			>
+		</div>
+		<div class="drop-link"><a href="https://nsvegur.me" target="_blank">Nagasai Vegur</a></div>
 
 		<div class="drop-div" />
 		<div class="drop-link"><a href="" class="dont-ref">Hide Others</a></div>

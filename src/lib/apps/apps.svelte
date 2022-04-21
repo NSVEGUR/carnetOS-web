@@ -41,13 +41,13 @@
 			}),
 			Help: new App('Help', {
 				mount: document.getElementById('app-help'),
-				y: '20%',
-				x: '0'
+				y: '25%',
+				x: '48%'
 			}),
 			About: new App('About', {
 				mount: document.getElementById('app-about'),
 				y: '10%',
-				x: '25%',
+				x: '10%',
 				height: '90%',
 				width: '70%'
 			})

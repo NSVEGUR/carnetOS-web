@@ -1,6 +1,7 @@
 <!--  svelte-ignore a11y-invalid-attribute-->
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { Apps } from './../utils/app/apps';
 	function trigger(e: any) {
 		const id = e.target.dataset?.profilelink;
 		show(id);
@@ -37,8 +38,22 @@
 				<div data-profilelink="2" class="profile-links" on:click={trigger}>
 					<span><i class="fas fa-key" /></span>Reset Pass
 				</div>
-				<div class="profile-links"><span><i class="fas fa-ticket-alt" /></span>My Bookings</div>
-				<div class="profile-links"><span><i class="fas fa-cogs" /></span>Settings</div>
+				<div
+					class="profile-links"
+					on:click={() => {
+						$Apps['Bookings'].open();
+					}}
+				>
+					<span><i class="fas fa-ticket-alt" /></span>My Bookings
+				</div>
+				<div
+					class="profile-links"
+					on:click={() => {
+						$Apps['Settings'].open();
+					}}
+				>
+					<span><i class="fas fa-cogs" /></span>Settings
+				</div>
 			</div>
 			<div class="profile">
 				<div data-profile="0" class="profile-div">

@@ -1,18 +1,45 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
+<script lang="ts">
+	import { Apps } from './../../../utils/app/apps';
+</script>
 
 <li class="menu-icons menu-icon-2">
 	<a href="" class="dont-ref">Trains</a>
 	<div class="drop">
-		<div class="drop-link">
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Trains'].open();
+			}}
+		>
 			<a href="" class="dont-ref">Open</a>
 		</div>
 		<div class="drop-div" />
-		<div class="drop-link">
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Trains'].open();
+			}}
+		>
 			<a href="" class="dont-ref">Trains Available</a>
 		</div>
-		<div class="drop-link"><a href="" class="dont-ref">Timings</a></div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Trains'].open();
+			}}
+		>
+			<a href="" class="dont-ref">Timings</a>
+		</div>
 		<div class="drop-div" />
-		<div class="drop-link"><a href="" class="dont-ref">Pricing</a></div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Bookings'].open();
+			}}
+		>
+			<a href="" class="dont-ref">Pricing</a>
+		</div>
 		<div class="drop-link"><a href="" class="dont-ref">Hide Others</a></div>
 		<div><a href="" class="not-active">Show All</a></div>
 	</div>

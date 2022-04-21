@@ -6,12 +6,32 @@
 		<div id="dbOS">
 			<div class="DBMS">
 				<img src="carnetOS.png" alt="carnet" />
-				<h1 class="title">carnetOS</h1>
-				<h3>A data driven clone of macOS</h3>
+				<h1 class="title">CarnetOS</h1>
+				<h3>A carnet data driven clone of macOS</h3>
 				<p>
-					This is a phase 2 DBMS project. Still in development and will be extended to phase to
-					using databases. This is purely made with plane html, css and js. No framework, No
-					bundling and No dependency:)
+					&emsp; CarnotOS is a railway ticket booking website made by five IIITDM Kancheepuram
+					students as a part of DBMS Project. The project basically contains similar functions when
+					compared to other railway ticket booking websites. The website is mostly based on IIITDM.
+					The website offers options like profile settings, ticket booking, the list of trains
+					available and some other UI settings. It's painted with Svelte in the frontend and nested
+					with Sql in the backend.
+				</p>
+				<h3>Profile:</h3>
+				<p>
+					The profile contains options like email and password changes, and also the bookings made
+					by the user.
+				</p>
+				<h3>List of Trains:-</h3>
+				<p>
+					The locations used in the project are different places in IIITDM Kancheepuram campus and
+					therefore creating a fantasy world.
+				</p>
+				<h3>Ticket Booking:-</h3>
+				<p>
+					Ticket booking contains options to book tickets and show the tickets booked and also the
+					train details. The idea of the project was to take the user into a small fantasy world
+					using a railway ticket booking website and give the user a beautiful and wonderful
+					experience while using the website.
 				</p>
 			</div>
 		</div>
@@ -36,8 +56,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		margin-top: 40rem;
 		img {
-			margin-top: 10rem;
 			max-width: 100%;
 			min-height: 300px;
 			max-height: 450px;

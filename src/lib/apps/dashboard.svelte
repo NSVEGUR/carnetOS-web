@@ -1,18 +1,54 @@
 <script lang="ts">
+	import { Apps } from './../utils/app/apps';
 </script>
 
 <div id="backstore" style="display: none">
 	<section id="app-dashboard">
 		<div class="left">
-			<div class="profile"><span>Profile</span></div>
+			<div
+				class="profile"
+				on:click={() => {
+					$Apps['Profile'].open();
+				}}
+			>
+				<span>Profile</span>
+			</div>
 		</div>
 		<div class="right">
-			<div class="bookings"><span>Bookings</span></div>
-			<div class="center">
-				<div class="settings"><span>Settings</span></div>
-				<div class="help"><span>Help</span></div>
+			<div
+				class="bookings"
+				on:click={() => {
+					$Apps['Bookings'].open();
+				}}
+			>
+				<span>Bookings</span>
 			</div>
-			<div class="trains"><span>Trains</span></div>
+			<div class="center">
+				<div
+					class="settings"
+					on:click={() => {
+						$Apps['Settings'].open();
+					}}
+				>
+					<span>Settings</span>
+				</div>
+				<div
+					class="help"
+					on:click={() => {
+						$Apps['Help'].open();
+					}}
+				>
+					<span>Help</span>
+				</div>
+			</div>
+			<div
+				class="trains"
+				on:click={() => {
+					$Apps['Trains'].open();
+				}}
+			>
+				<span>Trains</span>
+			</div>
 		</div>
 	</section>
 </div>

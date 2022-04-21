@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { Apps } from './../utils/app/apps';
+
 	function trigger(e: any) {
 		const id = e.target.dataset?.bookingslink;
 		show(id);
@@ -33,7 +35,12 @@
 				<div data-bookingslink="1" class="bookings-links" on:click={trigger}>
 					<span><i class="fas fa-check-circle" /></span>My Tickets
 				</div>
-				<div class="bookings-links">
+				<div
+					class="bookings-links"
+					on:click={() => {
+						$Apps['Trains'].open();
+					}}
+				>
 					<span><i class="fas fa-subway" /></span>Train Details
 				</div>
 			</div>

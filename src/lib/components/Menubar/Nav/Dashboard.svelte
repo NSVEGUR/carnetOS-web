@@ -1,19 +1,60 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
+<script lang="ts">
+	import { Apps } from './../../../utils/app/apps';
+</script>
 
 <li class="menu-icons menu-icon-2">
 	<a href="" class="dont-ref">Dashboard</a>
 	<div class="drop">
-		<div class="drop-link">
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Dashboard'].open();
+			}}
+		>
 			<a href="" class="dont-ref">Open</a>
 		</div>
 		<div class="drop-div" />
-		<div class="drop-link">
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Bookings'].open();
+			}}
+		>
 			<a href="" class="dont-ref">Bookings</a>
 		</div>
-		<div class="drop-link"><a href="" class="dont-ref">Trains</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Settings</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Contact</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Help</a></div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Trains'].open();
+			}}
+		>
+			<a href="" class="dont-ref">Trains</a>
+		</div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Settings'].open();
+			}}
+		>
+			<a href="" class="dont-ref">Settings</a>
+		</div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Developers'].open();
+			}}
+		>
+			<a href="" class="dont-ref">Contact</a>
+		</div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Help'].open();
+			}}
+		>
+			<a href="" class="dont-ref">Help</a>
+		</div>
 		<div class="drop-div" />
 		<div class="drop-link"><a href="" class="dont-ref">Hide Others</a></div>
 		<div><a href="" class="not-active">Show All</a></div>
