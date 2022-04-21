@@ -17,18 +17,51 @@
 			<a href="" class="dont-ref">About carnetOS</a>
 		</div>
 		<div class="drop-div" />
-		<div class="drop-link">
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Settings'].open();
+			}}
+		>
 			<a href="" class="dont-ref">System Preferences...</a>
 		</div>
-		<div class="drop-link"><a href="" class="dont-ref">Book Tickets...</a></div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Bookings'].open();
+			}}
+		>
+			<a href="" class="dont-ref">Book Tickets...</a>
+		</div>
 		<div class="drop-div" />
 		<div class="drop-link"><a href="" class="dont-ref">Recent Items</a></div>
 		<div class="drop-div" />
 		<div class="drop-link"><a href="" class="dont-ref">Force Quit</a></div>
 		<div class="drop-div" />
-		<div class="drop-link"><a href="" class="dont-ref">Sleep</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Restart...</a></div>
-		<div class="drop-link"><a href="" class="dont-ref">Shutdown...</a></div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				window.history.back();
+			}}
+		>
+			<a href="" class="dont-ref">Sleep</a>
+		</div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				location.reload();
+			}}
+		>
+			<a href="" class="dont-ref">Restart...</a>
+		</div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				window.history.back();
+			}}
+		>
+			<a href="" class="dont-ref">Shutdown...</a>
+		</div>
 		<div class="drop-div" />
 		<div class="drop-link"><a href="" class="dont-ref">Lock Screen</a></div>
 		<div class="drop-link"><a href="" class="dont-ref">Log Out User...</a></div>

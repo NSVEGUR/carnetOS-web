@@ -1,16 +1,36 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
+<script lang="ts">
+	import { Apps } from './../../../utils/app/apps';
+</script>
 
 <li class="menu-icons menu-icon-2">
 	<a href="" class="dont-ref">Profile</a>
 	<div class="drop">
-		<div class="drop-link">
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Profile'].open();
+			}}
+		>
 			<a href="" class="dont-ref">Open</a>
 		</div>
 		<div class="drop-div" />
-		<div class="drop-link">
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Profile'].open();
+			}}
+		>
 			<a href="" class="dont-ref">My Account</a>
 		</div>
-		<div class="drop-link"><a href="" class="dont-ref">Reset Password</a></div>
+		<div
+			class="drop-link"
+			on:click={() => {
+				$Apps['Profile'].open();
+			}}
+		>
+			<a href="" class="dont-ref">Reset Password</a>
+		</div>
 		<div class="drop-div" />
 		<div class="drop-link"><a href="" class="dont-ref">Hide Others</a></div>
 		<div><a href="" class="not-active">Show All</a></div>
