@@ -16,7 +16,7 @@
 		const active: HTMLElement = document.querySelector(`[data-bookings="${id}"]`);
 		const activeLink: HTMLElement = document.querySelector(`[data-bookingslink="${id}"]`);
 		activeLink.classList.add('active-bookings');
-		active.style.display = 'flex';
+		active.style.display = 'block';
 	}
 	onMount(() => {
 		show(0);
@@ -39,72 +39,87 @@
 			</div>
 			<div class="bookings">
 				<div data-bookings="0" class="bookings-div">
-					<div class="places">
-						<div class="input">
-							<span class="prefix">
-								<i class="fab fa-telegram-plane" />
-							</span>
-							<select id="from" name="from" form="to">
-								<option value="">From</option>
-								<option value="ashoka">Ashoka</option>
-								<option value="ashwatha">Ashwatha</option>
-								<option value="jasmine">Jasmine</option>
-								<option value="gulmohar">Gulmohar</option>
-								<option value="academics">Academics</option>
-								<option value="admin">Admin</option>
-								<option value="arjuna">Arjuna</option>
-								<option value="cafetaria">Cafetaria</option>
-								<option value="gate">Gate</option>
-								<option value="akshaya">Akshaya</option>
-							</select>
+					<section class="selection">
+						<div class="places">
+							<div class="input">
+								<span class="prefix">
+									<i class="fab fa-telegram-plane" />
+								</span>
+								<select id="from" name="from" form="to">
+									<option value="">From</option>
+									<option value="ashoka">Ashoka</option>
+									<option value="ashwatha">Ashwatha</option>
+									<option value="jasmine">Jasmine</option>
+									<option value="gulmohar">Gulmohar</option>
+									<option value="academics">Academics</option>
+									<option value="admin">Admin</option>
+									<option value="arjuna">Arjuna</option>
+									<option value="cafetaria">Cafetaria</option>
+									<option value="gate">Gate</option>
+									<option value="akshaya">Akshaya</option>
+								</select>
+							</div>
+							<div>
+								<i class="fas fa-map-signs" />
+							</div>
+							<div class="input">
+								<span class="prefix">
+									<i class="fas fa-map-marker-alt" />
+								</span>
+								<select id="to" name="to" form="from">
+									<option value="">To</option>
+									<option value="ashoka">Ashoka</option>
+									<option value="ashwatha">Ashwatha</option>
+									<option value="jasmine">Jasmine</option>
+									<option value="gulmohar">Gulmohar</option>
+									<option value="academics">Academics</option>
+									<option value="admin">Admin</option>
+									<option value="arjuna">Arjuna</option>
+									<option value="cafetaria">Cafetaria</option>
+									<option value="gate">Gate</option>
+									<option value="akshaya">Akshaya</option>
+								</select>
+							</div>
 						</div>
-						<div>
-							<i class="fas fa-map-signs" />
+						<div class="dates">
+							<div class="input">
+								<span class="prefix">
+									<i class="fas fa-calendar" />
+								</span>
+								<input type="date" placeholder="Date of Journey" />
+							</div>
+							<div>
+								<i class="fas fa-map-signs" />
+							</div>
+							<div class="input">
+								<span class="prefix">
+									<i class="fas fa-user-circle" />
+								</span>
+								<select id="class" name="class">
+									<option value="">Class</option>
+									<option value="general">General</option>
+									<option value="ac">AC</option>
+									<option value="woman">Woman</option>
+								</select>
+							</div>
 						</div>
-						<div class="input">
-							<span class="prefix">
-								<i class="fas fa-map-marker-alt" />
-							</span>
-							<select id="to" name="to" form="from">
-								<option value="">To</option>
-								<option value="ashoka">Ashoka</option>
-								<option value="ashwatha">Ashwatha</option>
-								<option value="jasmine">Jasmine</option>
-								<option value="gulmohar">Gulmohar</option>
-								<option value="academics">Academics</option>
-								<option value="admin">Admin</option>
-								<option value="arjuna">Arjuna</option>
-								<option value="cafetaria">Cafetaria</option>
-								<option value="gate">Gate</option>
-								<option value="akshaya">Akshaya</option>
-							</select>
-						</div>
-					</div>
-					<div class="dates">
-						<div class="input">
-							<span class="prefix">
-								<i class="fas fa-calendar" />
-							</span>
-							<input type="date" placeholder="Date of Journey" />
-						</div>
-						<div>
-							<i class="fas fa-map-signs" />
-						</div>
-						<div class="input">
-							<span class="prefix">
-								<i class="fas fa-user-circle" />
-							</span>
-							<select id="class" name="class">
-								<option value="">Class</option>
-								<option value="general">General</option>
-								<option value="ac">AC</option>
-								<option value="woman">Woman</option>
-							</select>
-						</div>
-					</div>
-					<div class="search">Search Trains</div>
+						<div class="search">Search Trains</div>
+					</section>
 				</div>
-				<div data-bookings="1" class="bookings-div">My Bookings</div>
+				<div data-bookings="1" class="bookings-div">
+					<div class="my-tickets">
+						<div class="my-ticket">
+							<h1>Ashwatha to Jasmine</h1>
+							<p>Date of Journey: 20.04.2022</p>
+							<p>Details: Coach 2, Seat 6</p>
+						</div>
+						<div class="my-ticket">
+							<h1>Jasmine to Arjuna</h1>
+							<p>Date of Journey: 21.04.2022</p>
+							<p>Details: Coach 1, Seat 10</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -160,10 +175,57 @@
 			gap: 10px;
 			.bookings-div {
 				display: none;
-				gap: 15px;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
+				width: 100%;
+				section,
+				.my-tickets {
+					display: flex;
+					gap: 15px;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+				}
+				.my-tickets {
+					padding: 10px;
+					width: 100%;
+				}
+				.my-ticket {
+					width: 100%;
+					min-height: 100px;
+					padding: 10px;
+					border-radius: 10px;
+					color: white;
+					h1 {
+						font-weight: 700;
+					}
+					&:nth-child(n) {
+						background: #ff00cc; /* fallback for old browsers */
+						background: -webkit-linear-gradient(
+							to right,
+							#333399,
+							#ff00cc
+						); /* Chrome 10-25, Safari 5.1-6 */
+						background: linear-gradient(to right, #333399, #ff00cc);
+					}
+					&:nth-child(2n) {
+						background: #000046; /* fallback for old browsers */
+						background: -webkit-linear-gradient(
+							to right,
+							#1cb5e0,
+							#000046
+						); /* Chrome 10-25, Safari 5.1-6 */
+						background: linear-gradient(to right, #1cb5e0, #000046);
+					}
+					&:nth-child(3n) {
+						background: #0f0c29; /* fallback for old browsers */
+						background: -webkit-linear-gradient(
+							to right,
+							#24243e,
+							#302b63,
+							#0f0c29
+						); /* Chrome 10-25, Safari 5.1-6 */
+						background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+					}
+				}
 			}
 		}
 		.active-bookings {
@@ -174,7 +236,7 @@
 		background: var(--system-transparent-color-primary-op);
 		margin-top: 10px;
 		padding: 0 13px;
-		border-radius: 4px;
+		border-radius: 10px;
 		font-size: 0.9rem;
 		transition: all 0.3s linear;
 		&:hover {
@@ -192,9 +254,9 @@
 		display: flex;
 		align-items: center;
 		max-width: 300px;
-		background: #fff;
-		border: 1px solid #a0a0a0;
-		border-radius: 4px;
+		background: var(--system-text-color);
+		border: 1px solid var(--system-thumb);
+		border-radius: 10px;
 		padding-left: 0.5rem;
 		overflow: hidden;
 		.prefix {
@@ -206,7 +268,8 @@
 		input {
 			flex-grow: 1;
 			font-size: 14px;
-			background: #fff;
+			color: var(--system-text-color-op);
+			background: var(--system-text-color);
 			border: none;
 			outline: none;
 			padding: 0.5rem;

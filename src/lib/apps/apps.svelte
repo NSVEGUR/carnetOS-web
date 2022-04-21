@@ -22,8 +22,6 @@
 			}),
 			Bookings: new App('Bookings', {
 				mount: document.getElementById('app-bookings'),
-				height: '80%',
-				width: '80%',
 				x: '15%',
 				y: '10%'
 			}),
