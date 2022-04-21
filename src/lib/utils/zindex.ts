@@ -8,7 +8,6 @@ export function findHighestZIndex(elem) {
 		);
 		if (zIndex > highest) {
 			highest = zIndex;
-			console.log(elements[i]);
 		}
 	}
 	return highest;

@@ -1,9 +1,19 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
+<script lang="ts">
+	import { Apps } from './../../../utils/app/apps';
+</script>
 
 <div class="logo menu-icons menu-icon-1" id="logo">
 	<a href="" class="logo-link dont-ref"> <i class="fab fa-apple" /></a>
 	<div class="drop">
-		<div class="drop-link" data-open="about" data-db="0">
+		<div
+			class="drop-link"
+			data-open="about"
+			data-db="0"
+			on:click={() => {
+				$Apps['About'].open();
+			}}
+		>
 			<a href="" class="dont-ref">About carnetOS</a>
 		</div>
 		<div class="drop-div" />

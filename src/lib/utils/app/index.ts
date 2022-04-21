@@ -1,6 +1,5 @@
 import 'winbox';
 import { ActiveIcon } from './../../store/store';
-import { findHighestZIndex } from './../zindex';
 
 declare const WinBox: WinBox.WinBoxConstructor;
 
@@ -45,8 +44,6 @@ export class App {
 			this.window = new WinBox(title ? title : this.title, this.params);
 		}
 		this.opened = true;
-		const highestZIndex = findHighestZIndex('div') + 1;
-		document.getElementById('dock').style.zIndex = highestZIndex.toString();
 		const profile = document.getElementById('profile-pic');
 		profile.classList.add('hithere');
 		setTimeout(() => {

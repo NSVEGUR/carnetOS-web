@@ -5,6 +5,8 @@
 	import Trains from './trains.svelte';
 	import Settings from './settings.svelte';
 	import Developers from './developers.svelte';
+	import Help from './help.svelte';
+	import About from './about.svelte';
 	import { onMount } from 'svelte';
 	import { App } from './../utils/app';
 	import { Apps } from './../utils/app/apps';
@@ -38,7 +40,16 @@
 				mount: document.getElementById('app-developers')
 			}),
 			Help: new App('Help', {
-				mount: document.getElementById('app-help')
+				mount: document.getElementById('app-help'),
+				y: '20%',
+				x: '0'
+			}),
+			About: new App('About', {
+				mount: document.getElementById('app-about'),
+				y: '10%',
+				x: '25%',
+				height: '90%',
+				width: '70%'
 			})
 		};
 	});
@@ -50,3 +61,5 @@
 <Trains />
 <Settings />
 <Developers />
+<About />
+<Help />
