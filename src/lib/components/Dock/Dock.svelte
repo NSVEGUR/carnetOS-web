@@ -33,7 +33,6 @@
 		margin-bottom: 0.3rem;
 		left: 0;
 		bottom: 0;
-		z-index: 9900;
 		position: fixed;
 
 		width: 100%;

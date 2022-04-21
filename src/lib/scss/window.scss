@@ -6,6 +6,15 @@
 	backdrop-filter: blur(30px);
 	background: var(--system-color-window);
 	border: 1px solid var(--system-transparent-color-window);
+	z-index: 10;
+	&:not(.focus) {
+		.wb-min,
+		.wb-close,
+		.wb-max {
+			pointer-events: none;
+			background: var(--system-thumb);
+		}
+	}
 	.wb-title {
 		text-align: center;
 		font-size: 1.2rem;
@@ -14,6 +23,7 @@
 		color: var(--system-text-color);
 	}
 	.wb-body {
+		animation: grow 0.4s ease;
 		margin: 1px;
 		border-bottom-right-radius: 10px;
 		border-bottom-left-radius: 10px;
@@ -50,6 +60,7 @@
 	.wb-min {
 		border-radius: 50%;
 		height: 13px;
+		cursor: default;
 		width: 13px;
 		margin: 0 4px;
 	}

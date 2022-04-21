@@ -1,6 +1,7 @@
 <!--  svelte-ignore a11y-invalid-attribute-->
 <script lang="ts">
 	import { onMount } from 'svelte';
+
 	function triggerDev(e: any) {
 		const devId = e.target.dataset?.dev;
 		showDev(devId);
@@ -195,6 +196,7 @@
 			top: 0;
 			width: 20%;
 			height: 100%;
+			gap: 5px;
 			padding-top: 30px;
 			.dev {
 				border-radius: 8px;

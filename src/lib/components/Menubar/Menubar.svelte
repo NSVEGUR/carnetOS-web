@@ -59,7 +59,6 @@
 	#menu {
 		background: var(--system-transparent-color-nav);
 		position: fixed;
-		z-index: 9900;
 		width: 100vw;
 	}
 

@@ -43,7 +43,7 @@
 			<div class="profile">
 				<div data-profile="0" class="profile-div">
 					<div class="profile-pic">
-						<img src="profile.png" alt="profile" />
+						<img id="profile-pic" src="profile.png" alt="profile" />
 					</div>
 					<div>
 						<h3>anonymous@gmail.com</h3>

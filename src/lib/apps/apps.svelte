@@ -26,7 +26,8 @@
 				y: '10%'
 			}),
 			Trains: new App('Trains', {
-				mount: document.getElementById('app-trains')
+				mount: document.getElementById('app-trains'),
+				max: true
 			}),
 			Settings: new App('Settings', {
 				mount: document.getElementById('app-settings'),

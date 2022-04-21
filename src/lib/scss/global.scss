@@ -1,4 +1,5 @@
 @import './resets.scss';
+@import './keyframes.scss';
 @import './theme.scss';
 @import './window.scss';
 
@@ -88,50 +89,4 @@ p {
 
 .links-hover {
 	background: var(--system-transparent-color-primary-op);
-}
-
-// Keyframe ANIMATIONS
-@keyframes loading {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 100%;
-	}
-}
-
-@keyframes fadein {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-@keyframes appearFromBottom {
-	0% {
-		transform: translateY(20vh);
-	}
-	100% {
-		transform: translateY(0);
-	}
-}
-@keyframes appearFromTop {
-	0% {
-		transform: translateY(-20vh);
-	}
-	100% {
-		transform: translateY(0);
-	}
-}
-@keyframes shake {
-	0% {
-		transform: translateX(10px);
-	}
-	50% {
-		transform: translateX(-10px);
-	}
-	100% {
-		transform: translateX(0);
-	}
 }

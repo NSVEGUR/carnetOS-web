@@ -64,7 +64,6 @@
 		color: var(--system-text-color);
 		font-size: 13px;
 		width: 200px;
-		z-index: 9900;
 		padding: 10px 5px;
 		background: var(--system-transparent-color-primary);
 		border-radius: 10px;
