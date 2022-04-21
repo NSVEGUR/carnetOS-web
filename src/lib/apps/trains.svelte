@@ -16,24 +16,199 @@
 				<div class="table-content">
 					<div class="table-row">
 						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">2</div>
-						<div class="table-data">0</div>
-						<div class="table-data">1</div>
-						<div class="table-data">5</div>
+						<div class="table-data">Ashoka</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">7:00 AM</div>
+						<div class="table-data">8:00 AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Hogwarts Express</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">Jasmine</div>
+						<div class="table-data">8:00 AM</div>
+						<div class="table-data">9:00 AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Hogwarts Express</div>
+						<div class="table-data">Jasmine</div>
+						<div class="table-data">Akshaya</div>
+						<div class="table-data">9:00 AM</div>
+						<div class="table-data">10:00 AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Hogwarts Express</div>
+						<div class="table-data">Akshaya</div>
+						<div class="table-data">Academics</div>
+						<div class="table-data">10:00 AM</div>
+						<div class="table-data">11:00 AM</div>
 					</div>
 					<div class="table-row">
 						<div class="table-data">Godawari Express</div>
-						<div class="table-data">1</div>
-						<div class="table-data">1</div>
-						<div class="table-data">2</div>
-						<div class="table-data">3</div>
+						<div class="table-data">gulmohar</div>
+						<div class="table-data">jasmine</div>
+						<div class="table-data">6:00AM</div>
+						<div class="table-data">7:00AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">jasmine</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">7:00AM</div>
+						<div class="table-data">8:00AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">Arjuna</div>
+						<div class="table-data">8:00AM</div>
+						<div class="table-data">9:00AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">Arjuna</div>
+						<div class="table-data">cafe</div>
+						<div class="table-data">9:00AM</div>
+						<div class="table-data">10:00AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">cafe</div>
+						<div class="table-data">Academics</div>
+						<div class="table-data">10:00AM</div>
+						<div class="table-data">11:00AM</div>
 					</div>
 					<div class="table-row">
 						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">0</div>
-						<div class="table-data">2</div>
-						<div class="table-data">2</div>
-						<div class="table-data">2</div>
+						<div class="table-data">Ashoka</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">7:00AM</div>
+						<div class="table-data">8:00AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">gulmohar</div>
+						<div class="table-data">8:00AM</div>
+						<div class="table-data">9:00AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">gulmohar</div>
+						<div class="table-data">jasmine</div>
+						<div class="table-data">9:00AM</div>
+						<div class="table-data">10:00AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">jasmine</div>
+						<div class="table-data">Academics</div>
+						<div class="table-data">10:00AM</div>
+						<div class="table-data">11:00AM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">Academics</div>
+						<div class="table-data">Gate</div>
+						<div class="table-data">11:00AM</div>
+						<div class="table-data">12:00PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Hogwarts Express</div>
+						<div class="table-data">Academics</div>
+						<div class="table-data">Akshaya</div>
+						<div class="table-data">17:00 PM</div>
+						<div class="table-data">18:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Hogwarts Express</div>
+						<div class="table-data">Akshaya</div>
+						<div class="table-data">Jasmine</div>
+						<div class="table-data">18:00 PM</div>
+						<div class="table-data">19:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Hogwarts Express</div>
+						<div class="table-data">Jasmine</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">19:00 PM</div>
+						<div class="table-data">20:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Hogwarts Express</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">Ashoka</div>
+						<div class="table-data">20:00 PM</div>
+						<div class="table-data">21:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">Academics</div>
+						<div class="table-data">cafe</div>
+						<div class="table-data">17:00 PM</div>
+						<div class="table-data">18:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">cafe</div>
+						<div class="table-data">Arjuna</div>
+						<div class="table-data">18:00 PM</div>
+						<div class="table-data">19:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">Arjuna</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">19:00 PM</div>
+						<div class="table-data">20:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">jasmine</div>
+						<div class="table-data">20:00 PM</div>
+						<div class="table-data">21:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Godawari Express</div>
+						<div class="table-data">gulmohar</div>
+						<div class="table-data">jasmine</div>
+						<div class="table-data">21:00 PM</div>
+						<div class="table-data">22:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">Gate</div>
+						<div class="table-data">Academics</div>
+						<div class="table-data">17:00 PM</div>
+						<div class="table-data">18:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">Academics</div>
+						<div class="table-data">jasmine</div>
+						<div class="table-data">18:00 PM</div>
+						<div class="table-data">19:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">jasmine</div>
+						<div class="table-data">gulmohar</div>
+						<div class="table-data">19:00 PM</div>
+						<div class="table-data">20:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">gulmohar</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">20:00 PM</div>
+						<div class="table-data">21:00 PM</div>
+					</div>
+					<div class="table-row">
+						<div class="table-data">Coramandel Express</div>
+						<div class="table-data">Ashwatha</div>
+						<div class="table-data">Ashoka</div>
+						<div class="table-data">21:00 PM</div>
+						<div class="table-data">22:00 PM</div>
 					</div>
 				</div>
 			</div>
