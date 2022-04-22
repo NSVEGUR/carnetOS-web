@@ -5,7 +5,7 @@
 	<section id="app-about">
 		<div id="dbOS">
 			<div class="DBMS">
-				<img src="carnetOS.png" alt="carnet" />
+				<div class="img" />
 				<h1 class="title">CarnetOS</h1>
 				<h3>A carnet data driven clone of macOS</h3>
 				<p>
@@ -21,12 +21,12 @@
 					The profile contains options like email and password changes, and also the bookings made
 					by the user.
 				</p>
-				<h3>List of Trains:-</h3>
+				<h3>List of Trains:</h3>
 				<p>
 					The locations used in the project are different places in IIITDM Kancheepuram campus and
 					therefore creating a fantasy world.
 				</p>
-				<h3>Ticket Booking:-</h3>
+				<h3>Ticket Booking:</h3>
 				<p>
 					Ticket booking contains options to book tickets and show the tickets booked and also the
 					train details. The idea of the project was to take the user into a small fantasy world
@@ -57,12 +57,13 @@
 		flex-direction: column;
 		justify-content: center;
 		margin-top: 40rem;
-		img {
+		.img {
+			background: var(--carnet-wallpaper) no-repeat center center;
+			background-size: cover;
 			max-width: 100%;
-			min-height: 300px;
+			min-height: 430px;
 			max-height: 450px;
 			border-radius: 20px;
-			object-fit: cover;
 		}
 		h1 {
 			text-align: center;

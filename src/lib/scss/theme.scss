@@ -16,6 +16,7 @@
 
 	/* For System dark-theme */
 	--desktop-wallpaper: url('/wallpapers/dark.jpeg');
+	--carnet-wallpaper: url('/wallpapers/carnetDark.png');
 	--system-primary-color: #1a1a1d;
 	--system-text-color: white;
 	--system-text-color-op: black;
@@ -36,6 +37,7 @@
 /* For System light-theme */
 .light-theme {
 	--desktop-wallpaper: url('/wallpapers/light.jpeg');
+	--carnet-wallpaper: url('/wallpapers/carnetLight.png');
 	--system-primary-color: #fffefe;
 	--system-text-color: black;
 	--system-text-color-op: white;
