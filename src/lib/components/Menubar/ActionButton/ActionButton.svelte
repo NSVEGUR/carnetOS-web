@@ -2,6 +2,7 @@
 	import Theme from './Theme.svelte';
 	import Color from './Color.svelte';
 	import Music from './Music.svelte';
+
 	function dropActionMenu() {
 		const actionDrop: HTMLElement = document.querySelector('.action-drop');
 		actionDrop.style.display = 'flex';
