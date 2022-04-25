@@ -11,8 +11,18 @@
 		.wb-min,
 		.wb-close,
 		.wb-max {
-			pointer-events: none;
 			background: var(--system-thumb);
+		}
+		.wb-icon:hover {
+			.wb-close {
+				background: #fe5e55;
+			}
+			.wb-min {
+				background: #ffbd2d;
+			}
+			.wb-max {
+				background: #25c93f;
+			}
 		}
 	}
 	.wb-title {
@@ -51,26 +61,64 @@
 	}
 	.wb-icon {
 		margin-top: 7px;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		display: flex;
+		gap: 8px;
+		flex-direction: row-reverse;
 	}
 
 	.wb-icon:hover * {
-		transform: scale(1.24);
+		transition: all 0.2s ease;
+		transform: scale(1.2);
+	}
+	.wb-icon:hover {
+		color: black;
+		.wb-close {
+			position: relative;
+			&::before {
+				content: '×';
+				position: absolute;
+				top: -7px;
+				right: 2.5px;
+			}
+		}
+		.wb-max {
+			position: relative;
+			&::before {
+				content: '+';
+				position: absolute;
+				top: -7px;
+				right: 2.5px;
+			}
+		}
+		.wb-min {
+			position: relative;
+			&::before {
+				content: '-';
+				position: absolute;
+				top: -10.5px;
+				right: 3px;
+			}
+		}
 	}
 	.wb-close,
 	.wb-max,
 	.wb-min {
+		color: black;
 		border-radius: 50%;
 		height: 13px;
 		cursor: default;
+		font-size: 0.8rem;
 		width: 13px;
-		margin: 0 4px;
 	}
 	.wb-close {
 		background: #fe5e55;
-		margin-right: 15px;
 	}
 	.wb-min {
 		background: #ffbd2d;
+		font-size: 1rem;
 	}
 	.wb-max {
 		background: #25c93f;

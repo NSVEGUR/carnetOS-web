@@ -245,6 +245,10 @@
 					height: 30px;
 					display: grid;
 					place-items: center;
+					&:hover a {
+						transition: all 0.3s ease;
+						transform: rotate(360deg);
+					}
 					a {
 						color: var(--system-text-color);
 					}

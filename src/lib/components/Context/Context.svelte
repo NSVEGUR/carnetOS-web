@@ -1,7 +1,8 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
 <script lang="ts">
 	import { hideMenu, rightClick } from './../../utils/context';
-	import switchTheme from '../../utils/menubar/theme';
+	import switchTheme from './../../utils/menubar/theme';
+	import { Apps } from './../../utils/app/apps';
 	let fullScreen: boolean = true;
 
 	function toggleFullScreen() {
@@ -14,9 +15,23 @@
 </script>
 
 <div id="contextMenu" class="contextMenu">
-	<div class="context-link"><a href="">Book Tickets</a></div>
+	<div
+		class="context-link"
+		on:click={() => {
+			$Apps['Bookings'].open();
+		}}
+	>
+		<a href="">Book Tickets</a>
+	</div>
 	<div class="drop-div" />
-	<div class="context-link"><a href="">Get Info</a></div>
+	<div
+		class="context-link"
+		on:click={() => {
+			$Apps['Help'].open();
+		}}
+	>
+		<a href="">Get Info</a>
+	</div>
 	{#if fullScreen}
 		<div
 			class="context-link"
