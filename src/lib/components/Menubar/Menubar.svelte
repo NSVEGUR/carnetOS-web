@@ -47,6 +47,12 @@
 				<Help />
 			</ul>
 		</div>
+		<div id="wifi">
+			<i class="fas fa-wifi" />
+		</div>
+		<div id="search">
+			<i class="fas fa-search" />
+		</div>
 		<div id="focus">
 			<i class="fas fa-moon" />
 		</div>
@@ -96,11 +102,29 @@
 		position: fixed;
 		top: 0;
 		color: var(--system-text-color);
-		right: 205px;
+		right: 265px;
 		padding-top: 2px;
 		height: 20px;
 		width: 20px;
 		display: none;
+	}
+	#search {
+		position: fixed;
+		top: 0;
+		color: var(--system-text-color);
+		right: 215px;
+		padding-top: 2px;
+		height: 20px;
+		width: 20px;
+	}
+	#wifi {
+		position: fixed;
+		top: 0;
+		color: var(--system-text-color);
+		right: 245px;
+		padding-top: 2px;
+		height: 20px;
+		width: 20px;
 	}
 
 	@media screen and (max-width: 1250px) {
@@ -113,7 +137,7 @@
 			padding: 0 20px;
 		}
 		#focus {
-			right: 220px;
+			right: 265px;
 		}
 	}
 	@media screen and (max-width: 920px) {
