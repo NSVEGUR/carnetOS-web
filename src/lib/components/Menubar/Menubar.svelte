@@ -102,7 +102,7 @@
 		position: fixed;
 		top: 0;
 		color: var(--system-text-color);
-		right: 265px;
+		right: 285px;
 		padding-top: 2px;
 		height: 20px;
 		width: 20px;
@@ -121,7 +121,7 @@
 		position: fixed;
 		top: 0;
 		color: var(--system-text-color);
-		right: 245px;
+		right: 253px;
 		padding-top: 2px;
 		height: 20px;
 		width: 20px;
@@ -137,7 +137,7 @@
 			padding: 0 20px;
 		}
 		#focus {
-			right: 265px;
+			right: 285px;
 		}
 	}
 	@media screen and (max-width: 920px) {
@@ -166,7 +166,13 @@
 	}
 	@media screen and (max-width: 658px) {
 		#focus {
+			right: 130px;
+		}
+		#search {
 			right: 50px;
+		}
+		#wifi {
+			right: 90px;
 		}
 	}
 	@media screen and (max-width: 460px) {
