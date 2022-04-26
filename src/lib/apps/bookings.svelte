@@ -38,7 +38,7 @@
 				<div
 					class="bookings-links"
 					on:click={() => {
-						$Apps['Trains'].open();
+						$Apps['Trains'].openAfter();
 					}}
 				>
 					<span><i class="fas fa-subway" /></span>Train Details

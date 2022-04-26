@@ -50,7 +50,7 @@
 				<div
 					class="settings-links"
 					on:click={() => {
-						$Apps['Bookings'].open();
+						$Apps['Bookings'].openAfter();
 					}}
 				>
 					<span><i class="fas fa-ticket-alt" /></span>Booking Settings
@@ -58,7 +58,7 @@
 				<div
 					class="settings-links"
 					on:click={() => {
-						$Apps['Profile'].open();
+						$Apps['Profile'].openAfter();
 					}}
 				>
 					<span><i class="fas fa-user" /></span>Profile Settings

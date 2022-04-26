@@ -50,4 +50,20 @@ export class App {
 			profile.classList.remove('hithere');
 		}, 2000);
 	}
+
+	openAfter(title?: string) {
+		setTimeout(() => {
+			if (this.opened) {
+				this.window.focus();
+			} else {
+				this.window = new WinBox(title ? title : this.title, this.params);
+			}
+			this.opened = true;
+			const profile = document.getElementById('profile-pic');
+			profile.classList.add('hithere');
+			setTimeout(() => {
+				profile.classList.remove('hithere');
+			}, 2000);
+		}, 10);
+	}
 }

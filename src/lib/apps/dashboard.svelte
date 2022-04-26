@@ -8,7 +8,7 @@
 			<div
 				class="profile"
 				on:click={() => {
-					$Apps['Profile'].open();
+					$Apps['Profile'].openAfter();
 				}}
 			>
 				<span>Profile</span>
@@ -18,7 +18,7 @@
 			<div
 				class="bookings"
 				on:click={() => {
-					$Apps['Bookings'].open();
+					$Apps['Bookings'].openAfter();
 				}}
 			>
 				<span>Bookings</span>
@@ -27,7 +27,7 @@
 				<div
 					class="settings"
 					on:click={() => {
-						$Apps['Settings'].open();
+						$Apps['Settings'].openAfter();
 					}}
 				>
 					<span>Settings</span>
@@ -35,7 +35,7 @@
 				<div
 					class="help"
 					on:click={() => {
-						$Apps['Help'].open();
+						$Apps['Help'].openAfter();
 					}}
 				>
 					<span>Help</span>
@@ -44,7 +44,7 @@
 			<div
 				class="trains"
 				on:click={() => {
-					$Apps['Trains'].open();
+					$Apps['Trains'].openAfter();
 				}}
 			>
 				<span>Trains</span>
