@@ -2,6 +2,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Apps } from './../utils/app/apps';
+	import { UserDetails } from './../store/store';
+	import { resetPassword, resetMail } from './../utils/database/database';
+	let password: string;
+	let confirmPassword: string;
+	let mail: string;
+	let confirmMail: string;
 	function trigger(e: any) {
 		const id = e.target.dataset?.profilelink;
 		show(id);
@@ -23,6 +29,53 @@
 	onMount(() => {
 		show(0);
 	});
+	async function updatePassword() {
+		const status = document.getElementById('resetpass');
+		status.style.display = 'block';
+		if (password != confirmPassword) {
+			status.style.color = 'red';
+			status.innerHTML = `Passwords aren't same!`;
+		} else {
+			status.style.color = 'white';
+			status.innerHTML = `Updating ...`;
+			const response = await resetPassword(password, $UserDetails.userid);
+			if (response.status == 'failure') {
+				status.style.color = 'red';
+				status.innerHTML = `Error in updating passwords!`;
+			} else if (response.status == 'success') {
+				status.style.color = 'green';
+				status.innerHTML = `Password Updated`;
+			}
+		}
+		setTimeout(() => {
+			status.style.display = 'none';
+			status.innerHTML = '';
+		}, 1500);
+	}
+
+	async function updateMail() {
+		const status = document.getElementById('resetmail');
+		status.style.display = 'block';
+		if (mail != confirmMail) {
+			status.style.color = 'red';
+			status.innerHTML = `Mails aren't same!`;
+		} else {
+			status.style.color = 'white';
+			status.innerHTML = `Updating ...`;
+			const response = await resetMail(mail, $UserDetails.userid);
+			if (response.status == 'failure') {
+				status.style.color = 'red';
+				status.innerHTML = `Error in updating mails!`;
+			} else if (response.status == 'success') {
+				status.style.color = 'green';
+				status.innerHTML = `Mail Updated`;
+			}
+		}
+		setTimeout(() => {
+			status.style.display = 'none';
+			status.innerHTML = '';
+		}, 1500);
+	}
 </script>
 
 <div id="backstore" style="display: none">
@@ -61,23 +114,28 @@
 						<img id="profile-pic" src="profile.png" alt="profile" />
 					</div>
 					<div>
-						<h3>anonymous@gmail.com</h3>
+						<h3>{$UserDetails.mail}</h3>
 					</div>
 				</div>
 				<div data-profile="1" class="profile-div">
 					<form>
-						<input type="email" placeholder="Enter New Email" />
-						<input type="email" placeholder="Confirm New Email" />
+						<input type="email" placeholder="Enter New Email" bind:value={mail} />
+						<input type="email" placeholder="Confirm New Email" bind:value={confirmMail} />
 					</form>
-					<div class="submit">Update Email</div>
+					<div id="resetmail" />
+					<div class="submit" on:click={updateMail}>Update Email</div>
 				</div>
 				<div data-profile="2" class="profile-div">
 					<form>
-						<input type="password" placeholder="Enter Old Password" />
-						<input type="password" placeholder="Enter New Password" />
-						<input type="password" placeholder="Confirm New Password" />
+						<input type="password" placeholder="Enter New Password" bind:value={password} />
+						<input
+							type="password"
+							placeholder="Confirm New Password"
+							bind:value={confirmPassword}
+						/>
 					</form>
-					<div class="submit">Reset Password</div>
+					<div id="resetpass" />
+					<div class="submit" on:click={updatePassword}>Reset Password</div>
 				</div>
 			</div>
 		</div>
@@ -88,6 +146,12 @@
 	#app-profile {
 		width: 100%;
 		height: 100%;
+	}
+	#resetpass,
+	#resetmail {
+		color: green;
+		font-size: 0.8rem;
+		display: none;
 	}
 	.app-profile {
 		width: 100%;

@@ -1,218 +1,45 @@
 <!-- svelte-ignore a11y-invalid-attribute -->
 <script lang="ts">
+	import Loader from './../components/Loader.svelte';
+	import { getTrains } from './../utils/database/database';
+	let contentLoaded = false;
+	let results: any[];
+	async function getData() {
+		const response = await getTrains();
+		contentLoaded = true;
+		results = response.results;
+	}
+	getData();
 </script>
 
 <div id="backstore" style="display: none">
 	<section id="app-trains">
-		<div class="container">
-			<div class="table">
-				<div class="table-header">
-					<div class="header__item">Train Name</div>
-					<div class="header__item">From</div>
-					<div class="header__item">To</div>
-					<div class="header__item">Departure<span>(From)</span></div>
-					<div class="header__item">Arrival<span>(To)</span></div>
-				</div>
-				<div class="table-content">
-					<div class="table-row">
-						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">Ashoka</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">7:00 AM</div>
-						<div class="table-data">8:00 AM</div>
+		{#if contentLoaded}
+			<div class="container">
+				<div class="table">
+					<div class="table-header">
+						<div class="header__item">Train Name</div>
+						<div class="header__item">From</div>
+						<div class="header__item">To</div>
+						<div class="header__item">Departure<span>(From)</span></div>
+						<div class="header__item">Arrival<span>(To)</span></div>
 					</div>
-					<div class="table-row">
-						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">Jasmine</div>
-						<div class="table-data">8:00 AM</div>
-						<div class="table-data">9:00 AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">Jasmine</div>
-						<div class="table-data">Akshaya</div>
-						<div class="table-data">9:00 AM</div>
-						<div class="table-data">10:00 AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">Akshaya</div>
-						<div class="table-data">Academics</div>
-						<div class="table-data">10:00 AM</div>
-						<div class="table-data">11:00 AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">gulmohar</div>
-						<div class="table-data">jasmine</div>
-						<div class="table-data">6:00AM</div>
-						<div class="table-data">7:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">jasmine</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">7:00AM</div>
-						<div class="table-data">8:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">Arjuna</div>
-						<div class="table-data">8:00AM</div>
-						<div class="table-data">9:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">Arjuna</div>
-						<div class="table-data">cafe</div>
-						<div class="table-data">9:00AM</div>
-						<div class="table-data">10:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">cafe</div>
-						<div class="table-data">Academics</div>
-						<div class="table-data">10:00AM</div>
-						<div class="table-data">11:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">Ashoka</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">7:00AM</div>
-						<div class="table-data">8:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">gulmohar</div>
-						<div class="table-data">8:00AM</div>
-						<div class="table-data">9:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">gulmohar</div>
-						<div class="table-data">jasmine</div>
-						<div class="table-data">9:00AM</div>
-						<div class="table-data">10:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">jasmine</div>
-						<div class="table-data">Academics</div>
-						<div class="table-data">10:00AM</div>
-						<div class="table-data">11:00AM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">Academics</div>
-						<div class="table-data">Gate</div>
-						<div class="table-data">11:00AM</div>
-						<div class="table-data">12:00PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">Academics</div>
-						<div class="table-data">Akshaya</div>
-						<div class="table-data">17:00 PM</div>
-						<div class="table-data">18:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">Akshaya</div>
-						<div class="table-data">Jasmine</div>
-						<div class="table-data">18:00 PM</div>
-						<div class="table-data">19:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">Jasmine</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">19:00 PM</div>
-						<div class="table-data">20:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Hogwarts Express</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">Ashoka</div>
-						<div class="table-data">20:00 PM</div>
-						<div class="table-data">21:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">Academics</div>
-						<div class="table-data">cafe</div>
-						<div class="table-data">17:00 PM</div>
-						<div class="table-data">18:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">cafe</div>
-						<div class="table-data">Arjuna</div>
-						<div class="table-data">18:00 PM</div>
-						<div class="table-data">19:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">Arjuna</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">19:00 PM</div>
-						<div class="table-data">20:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">jasmine</div>
-						<div class="table-data">20:00 PM</div>
-						<div class="table-data">21:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Godawari Express</div>
-						<div class="table-data">gulmohar</div>
-						<div class="table-data">jasmine</div>
-						<div class="table-data">21:00 PM</div>
-						<div class="table-data">22:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">Gate</div>
-						<div class="table-data">Academics</div>
-						<div class="table-data">17:00 PM</div>
-						<div class="table-data">18:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">Academics</div>
-						<div class="table-data">jasmine</div>
-						<div class="table-data">18:00 PM</div>
-						<div class="table-data">19:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">jasmine</div>
-						<div class="table-data">gulmohar</div>
-						<div class="table-data">19:00 PM</div>
-						<div class="table-data">20:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">gulmohar</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">20:00 PM</div>
-						<div class="table-data">21:00 PM</div>
-					</div>
-					<div class="table-row">
-						<div class="table-data">Coramandel Express</div>
-						<div class="table-data">Ashwatha</div>
-						<div class="table-data">Ashoka</div>
-						<div class="table-data">21:00 PM</div>
-						<div class="table-data">22:00 PM</div>
+					<div class="table-content">
+						{#each results as result}
+							<div class="table-row">
+								<div class="table-data">{result.trainname || 'Hogwarts Express'}</div>
+								<div class="table-data">{result.from_place || 'Ashoka'}</div>
+								<div class="table-data">{result.to_place || 'Ashwatha'}</div>
+								<div class="table-data">{result.departure || '7:00'}</div>
+								<div class="table-data">{result.arrival || '8:00'}</div>
+							</div>
+						{/each}
 					</div>
 				</div>
 			</div>
-		</div>
+		{:else}
+			<Loader />
+		{/if}
 	</section>
 </div>
 

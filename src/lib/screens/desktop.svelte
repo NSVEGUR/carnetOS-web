@@ -1,25 +1,21 @@
 <script lang="ts" context="module">
-	import Splash from './splash.svelte';
 	import Duplicates from './../components/Duplicates/Duplicates.svelte';
 	import Dock from './../components/Dock/Dock.svelte';
 	import Menubar from './../components/Menubar/Menubar.svelte';
 	import Context from './../components/Context/Context.svelte';
-	import { loadDesktop, manageFullScreen } from './../utils/desktop';
 	import Apps from './../apps/apps.svelte';
 </script>
 
-<svelte:window on:load={loadDesktop} on:dblclick={manageFullScreen} />
-<Splash />
-<main>
+<section id="desktop">
 	<Duplicates />
 	<Menubar />
 	<Dock />
 	<Context />
 	<Apps />
-</main>
+</section>
 
 <style lang="scss">
-	main {
+	#desktop {
 		height: 100vh;
 		width: 100vw;
 		display: none;

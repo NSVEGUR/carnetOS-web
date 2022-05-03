@@ -1,13 +1,21 @@
 import { dontRef } from './menubar/dont-ref';
 
-export function loadDesktop() {
+export function loadAuth() {
 	setTimeout(() => {
 		document.getElementById('splash').style.display = 'none';
-		document.querySelector('main').style.animation = 'fadein 0.5s forwards ease-in-out';
-		document.getElementById('dock').style.animation = 'appearFromBottom 0.7s forwards ease-in-out';
-		document.querySelector('main').style.display = 'block';
-		dontRef();
+		document.getElementById('auth').style.animation = 'fadein 0.5s forwards ease-in-out';
+		document.getElementById('auth').style.display = 'block';
 	}, 2500);
+}
+
+export function loadDesktop() {
+	document.getElementById('auth').style.display = 'none';
+	document.getElementById('desktop').style.animation = 'fadein 0.5s forwards ease-in-out';
+	document.getElementById('dock').style.animation = 'appearFromBottom 0.7s forwards ease-in-out';
+	document.getElementById('desktop').style.display = 'block';
+	setTimeout(() => {
+		dontRef();
+	}, 2000);
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

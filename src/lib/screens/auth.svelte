@@ -1,7 +1,9 @@
 <script lang="ts">
 	import Splash from './splash.svelte';
-	import { loadDesktop, manageFullScreen } from './../utils/desktop';
+	import { loadAuth, manageFullScreen, loadDesktop } from './../utils/desktop';
 	import { Motion } from 'svelte-motion';
+	import { login, signup } from '../utils/database/database';
+	import { UserDetails, LoggedIn } from './../store/store';
 	let auth = 'none';
 	const pageTransitionVariants = {
 		visible: {
@@ -19,11 +21,85 @@
 			x: 1000
 		}
 	};
+	let mail: string;
+	let password: string;
+
+	let loginResponse: any;
+	let loginClicked = false;
+	let logResponded = false;
+
+	let signupResponse: any;
+	let signupClicked = false;
+	let signResponded = false;
+
+	$: if (loginClicked) {
+		const loginStatus = document.getElementById('loginStatus');
+		loginStatus.style.display = 'block';
+		loginStatus.innerHTML = `Logging In ...`;
+	}
+	$: if (logResponded) {
+		const loginStatus = document.getElementById('loginStatus');
+		if (loginResponse.status === 'success') {
+			$UserDetails = {
+				userid: loginResponse.results[0].userid,
+				mail: loginResponse.results[0].mail
+			};
+			loginStatus.style.color = 'green';
+			loginStatus.innerHTML = 'Logged In Successfully';
+			setTimeout(() => {
+				$LoggedIn = true;
+			}, 1500);
+		} else if (loginResponse.status === 'failure') {
+			loginStatus.style.color = 'red';
+			loginStatus.innerHTML = loginResponse.message || 'Error In Loggining In';
+		}
+		setTimeout(() => {
+			loginClicked = false;
+			logResponded = false;
+			loginStatus.innerHTML = '';
+			loginStatus.style.color = 'white';
+			loginStatus.style.display = 'none';
+		}, 2500);
+	}
+
+	$: if (signupClicked) {
+		const signupStatus = document.getElementById('signupStatus');
+		signupStatus.style.display = 'block';
+		signupStatus.innerHTML = `Signing Up ...`;
+	}
+	$: if (signResponded) {
+		const signupStatus = document.getElementById('signupStatus');
+		if (signupResponse.status === 'success') {
+			$UserDetails = {
+				userid: signupResponse.results.userid,
+				mail: signupResponse.results.mail
+			};
+			signupStatus.style.color = 'green';
+			signupStatus.innerHTML = 'Signed Up Successfully';
+			setTimeout(() => {
+				$LoggedIn = true;
+			}, 1500);
+		} else if (signupResponse.status === 'failure') {
+			signupStatus.style.color = 'red';
+			signupStatus.innerHTML = signupResponse.message || 'Error In Signing Up';
+		}
+		setTimeout(() => {
+			signupClicked = false;
+			signResponded = false;
+			signupStatus.innerHTML = '';
+			signupStatus.style.color = 'white';
+			signupStatus.style.display = 'none';
+		}, 2500);
+	}
+
+	$: if ($LoggedIn) {
+		loadDesktop();
+	}
 </script>
 
-<svelte:window on:load={loadDesktop} on:dblclick={manageFullScreen} />
+<svelte:window on:load={loadAuth} on:dblclick={manageFullScreen} />
 <Splash />
-<main>
+<section id="auth">
 	<div class="auth-container">
 		<div class="profile">
 			<img src="profile.png" alt="ProfileImage" />
@@ -31,10 +107,12 @@
 		{#if auth == 'none'}
 			<Motion variants={pageTransitionVariants} initial="hidden" animate="visible" let:motion>
 				<section use:motion>
-					<h1>Welcome to dbOS</h1>
+					<h1>Welcome to carnetOS</h1>
 					<p
 						class="touch-id"
 						on:click={() => {
+							mail = '';
+							password = '';
 							auth = 'login';
 						}}
 					>
@@ -46,13 +124,37 @@
 			<Motion variants={pageTransitionVariants} initial="hidden" animate="visible" let:motion>
 				<section use:motion>
 					<form class="password">
-						<input placeholder="Enter Email" id="password" type="email" autocomplete="off" />
-						<input placeholder="Enter Password" id="password" type="password" autocomplete="off" />
+						<input
+							placeholder="Enter Email"
+							id="password"
+							type="email"
+							autocomplete="off"
+							bind:value={mail}
+						/>
+						<input
+							placeholder="Enter Password"
+							id="password"
+							type="password"
+							autocomplete="off"
+							bind:value={password}
+						/>
 					</form>
-					<div class="submit">Login</div>
+					<div id="loginStatus" />
+					<div
+						class="submit"
+						on:click={async () => {
+							loginClicked = true;
+							loginResponse = await login(mail, password);
+							logResponded = true;
+						}}
+					>
+						Login
+					</div>
 					<div
 						class="signup"
 						on:click={() => {
+							mail = '';
+							password = '';
 							auth = 'signup';
 						}}
 					>
@@ -75,13 +177,37 @@
 			<Motion variants={pageTransitionVariants} initial="hidden" animate="visible" let:motion>
 				<section use:motion>
 					<form class="password">
-						<input placeholder="Enter Email" id="password" type="email" autocomplete="off" />
-						<input placeholder="Enter Password" id="password" type="password" autocomplete="off" />
+						<input
+							placeholder="Enter Email"
+							id="password"
+							type="email"
+							autocomplete="off"
+							bind:value={mail}
+						/>
+						<input
+							placeholder="Enter Password"
+							id="password"
+							type="password"
+							autocomplete="off"
+							bind:value={password}
+						/>
 					</form>
-					<div class="submit">Signup</div>
+					<div id="signupStatus" />
+					<div
+						class="submit"
+						on:click={async () => {
+							signupClicked = true;
+							signupResponse = await signup(mail, password);
+							signResponded = true;
+						}}
+					>
+						Signup
+					</div>
 					<div
 						class="signup"
 						on:click={() => {
+							mail = '';
+							password = '';
 							auth = 'login';
 						}}
 					>
@@ -102,10 +228,10 @@
 			</div>
 		{/if}
 	</div>
-</main>
+</section>
 
 <style lang="scss">
-	main {
+	#auth {
 		width: 100vw;
 		height: 100vh;
 		overflow: hidden;
@@ -117,6 +243,12 @@
 		position: absolute;
 		color: var(--system-text-color);
 		font-weight: 500;
+		#loginStatus,
+		#signupStatus {
+			display: none;
+			font-size: 0.8rem;
+			margin: 10px 0;
+		}
 		.auth-container {
 			width: 100%;
 			height: 100%;

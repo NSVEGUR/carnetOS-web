@@ -22,6 +22,7 @@
 	"devDependencies": {
 		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
 		"@tsconfig/svelte": "^2.0.1",
+		"@types/mysql": "^2.15.21",
 		"@types/winbox": "^0.2.1",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
 		"@typescript-eslint/parser": "^5.10.1",
@@ -41,6 +42,8 @@
 		"vite": "^2.7.2"
 	},
 	"dependencies": {
+		"@lottiefiles/svelte-lottie-player": "^0.2.0",
+		"mysql": "^2.18.1",
 		"popmotion": "^11.0.3",
 		"winbox": "^0.2.1"
 	},
